@@ -14,6 +14,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./hypr.nix
+    ./waybar.nix
   ];
 
   nixpkgs = {
@@ -40,17 +42,21 @@
 
   # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "vlad";
+    homeDirectory = "/home/vlad";
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  home.packages = with pkgs; [ 
+    dunst
+  ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

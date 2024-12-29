@@ -44,11 +44,15 @@
   services.desktopManager.plasma6.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack    
+  ];
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
+      hyprpaper
       tree
       vesktop
       neovim
@@ -56,14 +60,14 @@
       helix
       prismlauncher
       telegram-desktop
-      neofetch
+      fastfetch
       git
       rustup
       wofi
       waybar
       zig
       polkit_gnome
-      wlogout
+      hyprshot
     ];
     shell = pkgs.zsh;
   };
@@ -85,7 +89,7 @@
     };
     shellInit =  ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      neofetch
+      fastfetch --kitty ~/images/fetch-logo.png
     '';
   };
   programs.firefox.enable = true;
@@ -98,6 +102,7 @@
     zsh-autosuggestions
     zsh-syntax-highlighting
     home-manager
+    wlogout
    ];
 
   

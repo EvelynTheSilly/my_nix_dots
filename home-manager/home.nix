@@ -16,6 +16,7 @@
     # ./nvim.nix
     ./hypr.nix
     ./waybar.nix
+    ./hyprpaper.nix
   ];
 
   nixpkgs = {

@@ -40,13 +40,34 @@
   time.timeZone = "Europe/London";
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.ratbagd.enable = true;
+  services.displayManager.ly.enable = true;
+  #services.desktopManager.plasma6.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
   fonts.packages = with pkgs; [
     nerd-fonts.hack    
   ];
+
+  
+  #cursor shit
+  environment.variables = {
+    XCURSOR_THEME = "mochaDark"; 
+    XCURSOR_SIZE = "24"; 
+  };
+
+  # GTK cursor configuration
+  #programs.gtk = {
+  #  enable = true;
+  #  cursorTheme = "mochaDark";
+  #  cursorSize = 24;
+  #};
+
+  # Qt cursor configuration
+  environment.variables.QT_CURSOR_THEME = "mochaDark";
+  environment.variables.QT_CURSOR_SIZE = "24";
+  
+  
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
@@ -64,10 +85,22 @@
       git
       rustup
       wofi
+      cava
       waybar
       zig
       polkit_gnome
       hyprshot
+      lunarvim
+      zed-editor
+      clang
+      piper
+      libratbag
+      hyprlock
+      hyprland-per-window-layout
+      killall
+      ranger
+      arandr
+      btop
     ];
     shell = pkgs.zsh;
   };
@@ -89,7 +122,7 @@
     };
     shellInit =  ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      fastfetch --kitty ~/images/fetch-logo.png
+      fastfetch 
     '';
   };
   programs.firefox.enable = true;
@@ -103,6 +136,7 @@
     zsh-syntax-highlighting
     home-manager
     wlogout
+    catppuccin-cursors
    ];
 
   

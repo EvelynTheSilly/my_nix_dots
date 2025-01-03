@@ -11,7 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    catppuccin.url = "github:catppuccin/nix";
   };
   
   outputs = {
@@ -19,6 +20,8 @@
     nixpkgs,
     home-manager,
     hyprland,
+    catppuccin,
+    #hy3,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -26,11 +29,14 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # FIXME replace with your hostname
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix];
+        modules = [
+          ./nixos/configuration.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+        ];
       };
     };
 
@@ -43,7 +49,9 @@
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [
+          #hyprland.homeManagerModules.default
           ./home-manager/home.nix
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
     };

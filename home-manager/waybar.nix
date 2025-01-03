@@ -10,7 +10,7 @@
         position = "top";
         height = 50;
         modules-left = [ "custom/power" "hyprland/workspaces" ];
-        modules-right =  ["tray" "cpu" "memory" "pulseaudio" "clock" ]; 
+        modules-right =  ["tray" "cpu" "memory" "pulseaudio" "clock" ];
         cpu = {
           format = " {usage}%";
         };
@@ -22,22 +22,58 @@
         };
         "custom/power" = {
           format = "pwr";
-          tooltip = "Power";
+          tooltip = false;
           on-click = "wlogout";
-          on-click-right = "wlogout";
+          on-click-right = "wlogout --protocol layer-shell";
           class = "power-button";
         };
-      };      
+      };
     };
     style = ''
-        /* Base styling for the bar */
+      @define-color rosewater #f5e0dc;
+      @define-color flamingo #f2cdcd;
+      @define-color pink #f5c2e7;
+      @define-color mauve #cba6f7;
+      @define-color red #f38ba8;
+      @define-color maroon #eba0ac;
+      @define-color peach #fab387;
+      @define-color yellow #f9e2af;
+      @define-color green #a6e3a1;
+      @define-color teal #94e2d5;
+      @define-color sky #89dceb;
+      @define-color sapphire #74c7ec;
+      @define-color blue #89b4fa;
+      @define-color lavender #b4befe;
+      @define-color text #cdd6f4;
+      @define-color subtext1 #bac2de;
+      @define-color subtext0 #a6adc8;
+      @define-color overlay2 #9399b2;
+      @define-color overlay1 #7f849c;
+      @define-color overlay0 #6c7086;
+      @define-color surface2 #585b70;
+      @define-color surface1 #45475a;
+      @define-color surface0 #313244;
+      @define-color base #1e1e2e;
+      @define-color mantle #181825;
+      @define-color crust #11111b;
+
+
+      /* Base styling for the bar */
         #waybar {
-          background: #1e1e2e; /* Dark background */
+          background: @base; /* Dark background */
           color: #ffffff;      /* White text color */
           font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;
           font-size: 14px;
           padding: 5px 10px;
-          border-bottom: 2px solid #89b4fa; /* Accent color */
+          border-bottom: 2px solid @blue; /* Accent color */
+        }
+
+        .modules-left {
+            padding-left: 7px;
+        }
+
+        .modules-right {
+          padding-right: 7px;
         }
 
         /* Styling for individual modules */
@@ -45,40 +81,25 @@
           margin: 0 5px;
           padding: 5px 8px;
           border-radius: 5px;
-          background: #313244; /* Slightly lighter background for modules */
-        }
-
-        /* Styling for the clock module (example) */
-        #waybar .module.clock {
-          background: #89b4fa; /* Blue background for clock */
-          color: #1e1e2e;      /* Dark text color */
-        }
-
-        /* Hover effect for modules */
-        #waybar .module:hover {
-          background: #89dceb; /* Lighter blue on hover */
-          color: #1e1e2e;
-          transition: background 0.3s, color 0.3s;
+          background: @surface0; /* Slightly lighter background for modules */
         }
 
         /* Active or focused workspace styling */
-        #waybar .module.workspaces .active {
+        #workspaces button.active {
+          background-color: @lavender; /* Green accent for active workspace */
+          color: @crust;
           font-weight: bold;
-          color: #a6e3a1; /* Green accent for active workspace */
         }
 
-        /* Inactive workspaces */
-        #waybar .module.workspaces .inactive {
+       /* Inactive workspaces */
+        #workspaces button.inactive {
           color: #585b70; /* Dimmed color for inactive workspaces */
         }
 
         /* Separator styling */
         #waybar .separator {
-          color: #89b4fa;
-          margin: 0 5px;
+         margin: 0 5px;
         }
-
       '';
-    
   };
-} 
+}

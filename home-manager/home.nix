@@ -16,7 +16,9 @@
     # ./nvim.nix
     ./hypr.nix
     ./waybar.nix
-    ./hyprpaper.nix
+    ./hyprutils.nix
+    ./fastfetch.nix
+    ./themes.nix
   ];
 
   nixpkgs = {
@@ -57,6 +59,13 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
+  };
+
+  programs.kitty = {
+    enable = true;
+    settings = {
+      background_opacity = 0.5;
+    };
   };
 
   # Nicely reload system units when changing configs

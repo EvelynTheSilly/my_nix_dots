@@ -1,9 +1,12 @@
-{pkgs,lib,...}:
+{pkgs,lib,inputs,...}:
 
 {
   programs.kitty.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
+    plugins = [
+      pkgs.hyprlandPlugins.hy3
+    ];
     # enables xwayland (isnt that obvious from the text?)
     xwayland.enable = true;
     settings = {
@@ -11,17 +14,25 @@
       "$term" = "kitty";
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";
-
+      
       bind = [
         #focus moving
-        "$mod, H, movefocus, l"
+        "$mod, H, hy3:movefocus, l"
         
-        "$mod, L, movefocus, r"
+        "$mod, L, hy3:movefocus, r"
         
-        "$mod, K, movefocus, u"
+        "$mod, K, hy3:movefocus, u"
         
-        "$mod, J, movefocus, d"
+        "$mod, J, hy3:movefocus, d"
 
+        #window moving
+        "$mod SHIFT, H, hy3:movewindow, l"
+        
+        "$mod SHIFT, L, hy3:movewindow, r"
+        
+        "$mod SHIFT, K, hy3:movewindow, u"
+        
+        "$mod SHIFT, J, hy3:movewindow, d"
         #move workspace to other monitor
         "$mod, left, movecurrentworkspacetomonitor, 0"
         "$mod, right, movecurrentworkspacetomonitor, 1"
@@ -38,8 +49,9 @@
         "$mod, S, exec, $screenshotter"
 
         "$mod, Q, killactive,"
+
+        "$mod, C, togglesplit"
       ]
-      
       ++ (
         # workspaces
         # binds $mod + [shift +] {1..9} to [move app to] workspace {1..9}
@@ -53,7 +65,18 @@
           )
           9)
       );
-
+      env = [
+        "HYPRCURSOR_THEME,catppuccin-mocha-dark-crusors"
+        "HYPRCURSOR_SIZE,24"
+      ];
+      input = {
+        kb_layout = [
+          "us, ru"
+        ];
+        kb_options = [
+          "grp:win_space_toggle"
+        ];
+      };
       monitor = [
         "DP-1, 3440x1440@165, 0x0, 1"
         "DP-2, 1920x1080@100, 3440x0,1"
@@ -70,15 +93,26 @@
       exec-once = [
         "$term"
         "hyprpaper"
-        "waybar"
+        "hyprland-per-window-layout"
+        "waybar -l debug > ~/waybar_logs.txt"
         "dunst"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
       decoration = {
-        inactive_opacity = 0.9;
+        inactive_opacity = 1;
       };
       misc = {
         force_default_wallpaper = 1;
+      };
+      general = {
+        layout = "hy3";
+      };
+      plugin = {
+        hy3 = {
+          autotile = {
+            enable = true;
+          };
+        };
       };
     };
   };

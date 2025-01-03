@@ -67,6 +67,12 @@
   environment.variables.QT_CURSOR_THEME = "mochaDark";
   environment.variables.QT_CURSOR_SIZE = "24";
   
+
+  environment.variables = {
+    OPENAI_API_KEY = if builtins.pathExists "/home/vlad/.config/env/openai.env"
+      then pkgs.lib.readFile "/home/vlad/.config/env/openai.env"
+      else "";
+  };
   
   security.polkit.enable = true;
   users.users.vlad = {

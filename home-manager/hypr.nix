@@ -66,7 +66,7 @@
           9)
       );
       env = [
-        "HYPRCURSOR_THEME,catppuccin-mocha-dark-crusors"
+        "HYPRCURSOR_THEME,catppuccin-latte-mauve-crusors"
         "HYPRCURSOR_SIZE,24"
       ];
       input = {

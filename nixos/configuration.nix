@@ -48,31 +48,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.hack    
   ];
-
-  
-  #cursor shit
-  environment.variables = {
-    XCURSOR_THEME = "mochaDark"; 
-    XCURSOR_SIZE = "24"; 
-  };
-
-  # GTK cursor configuration
-  #programs.gtk = {
-  #  enable = true;
-  #  cursorTheme = "mochaDark";
-  #  cursorSize = 24;
-  #};
-
-  # Qt cursor configuration
-  environment.variables.QT_CURSOR_THEME = "mochaDark";
-  environment.variables.QT_CURSOR_SIZE = "24";
-  
-
-  environment.variables = {
-    OPENAI_API_KEY = if builtins.pathExists "/home/vlad/.config/env/openai.env"
-      then pkgs.lib.readFile "/home/vlad/.config/env/openai.env"
-      else "";
-  };
+   
   
   security.polkit.enable = true;
   users.users.vlad = {
@@ -127,6 +103,14 @@
       ];
     };
     shellInit =  ''
+      # Path to the OpenAI API key file
+      OPENAI_KEY_FILE="$HOME/.config/env/openai.env"
+
+      # Check if the file exists and is not empty
+      if [ -f "$OPENAI_KEY_FILE" ] && [ -s "$OPENAI_KEY_FILE" ]; then
+        export OPENAI_API_KEY=$(cat "$OPENAI_KEY_FILE")
+      fi
+
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       fastfetch 
     '';

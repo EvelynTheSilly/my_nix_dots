@@ -6,7 +6,7 @@
   catppuccin.enable = true;
   catppuccin.cursors ={
     enable = true;
-    flavor = "mocha";
-    accent = "dark";
+    flavor = "latte";
+    accent = "mauve";
   };
 } 

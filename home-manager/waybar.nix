@@ -27,6 +27,9 @@
           on-click-right = "wlogout --protocol layer-shell";
           class = "power-button";
         };
+        clock = {
+          tooltip-format = "{:%Y-%b-%d, %a}";
+        };
       };
     };
     style = ''

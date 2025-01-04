@@ -55,6 +55,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
+      linuxKernel.packages.linux_6_6.perf
       hyprpaper
       tree
       vesktop

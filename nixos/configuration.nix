@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      "path:/home/vlad/mysystem/nixos/hardware-configuration.nix"
     ];
   nix.settings.experimental-features = [
     "nix-command"

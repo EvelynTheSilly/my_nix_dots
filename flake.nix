@@ -41,7 +41,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./device_specific/desktop/configuration.nix
+          ./device_specific/laptop/configuration.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
         ];

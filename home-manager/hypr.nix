@@ -1,13 +1,19 @@
 {pkgs,lib,inputs,...}:
 
+with{
+  hostname = builtins.getEnv "HOST";
+  laptop_host = "laptop-hostname";
+  pc_host = "nixos";  
+};
 {
+
   programs.kitty.enable = true;
+  # Variables for Hostnames
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
       pkgs.hyprlandPlugins.hy3
     ];
-    # enables xwayland (isnt that obvious from the text?)
     xwayland.enable = true;
     settings = {
       "$mod" = "SUPER"; 
@@ -88,10 +94,11 @@
           "grp:win_space_toggle"
         ];
       };
-      monitor = [
+      monitor = []++
+      (if hostname == pc_host then [
         "DP-1, 3440x1440@165, 0x0, 1"
         "DP-2, 1920x1080@100, 3440x0,1"
-      ];
+      ] else []); #conditional monitor config
       # mouse bindings
       bindm = [
         # move window
@@ -105,15 +112,12 @@
         "$term"
         "hyprpaper"
         "hyprland-per-window-layout"
-        "waybar -l debug > ~/waybar_logs.txt"
+        "waybar"
         "dunst"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
       decoration = {
         inactive_opacity = 1;
-      };
-      misc = {
-        force_default_wallpaper = 1;
       };
       general = {
         layout = "hy3";

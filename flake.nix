@@ -29,11 +29,19 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [
-          ./nixos/configuration.nix
+          ./device_specific/desktop/configuration.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./device_specific/desktop/configuration.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
         ];
@@ -44,13 +52,23 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # FIXME replace with your username@hostname
-      "vlad@nixos" = home-manager.lib.homeManagerConfiguration {
+      "vlad@desktop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [
           #hyprland.homeManagerModules.default
-          ./home-manager/home.nix
+          ./device_specific/desktop/home.nix
+          catppuccin.homeManagerModules.catppuccin
+        ];
+      };
+      "vlad@laptop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        # > Our main home-manager configuration file <
+        modules = [
+          #hyprland.homeManagerModules.default
+          ./device_specific/laptop/home.nix
           catppuccin.homeManagerModules.catppuccin
         ];
       };

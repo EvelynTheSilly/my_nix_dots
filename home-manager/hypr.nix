@@ -1,10 +1,6 @@
 {pkgs,lib,inputs,...}:
 
-with{
-  hostname = builtins.getEnv "HOST";
-  laptop_host = "laptop-hostname";
-  pc_host = "nixos";  
-};
+
 {
 
   programs.kitty.enable = true;
@@ -94,11 +90,10 @@ with{
           "grp:win_space_toggle"
         ];
       };
-      monitor = []++
-      (if hostname == pc_host then [
+      monitor = [
         "DP-1, 3440x1440@165, 0x0, 1"
         "DP-2, 1920x1080@100, 3440x0,1"
-      ] else []); #conditional monitor config
+      ];
       # mouse bindings
       bindm = [
         # move window

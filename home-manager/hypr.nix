@@ -33,6 +33,15 @@
         "$mod SHIFT, K, hy3:movewindow, u"
         
         "$mod SHIFT, J, hy3:movewindow, d"
+
+        "$mod CONTROL_L, L, resizeactive, -40 0"
+
+        "$mod CONTROL_L, H, resizeactive, 40 0"
+
+        "$mod CONTROL_L, K, resizeactive, 0 40"
+
+        "$mod CONTROL_L, J, resizeactive, 0 -40"     
+        
         #move workspace to other monitor
         "$mod, left, movecurrentworkspacetomonitor, 0"
         "$mod, right, movecurrentworkspacetomonitor, 1"
@@ -41,6 +50,8 @@
         "$mod, T, exec, kitty"
         
         "$mod, F, togglefloating"
+
+        "$mod, Y, exec, kitty --hold -e btop"
         
         "$mod, B, exec, firefox"
 

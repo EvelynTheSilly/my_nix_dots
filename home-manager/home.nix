@@ -59,6 +59,8 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
+    userName = "vlad";
+    userEmail = "vlad@nikulin.name"; 
   };
 
   programs.kitty = {

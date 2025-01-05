@@ -129,18 +129,7 @@
 
   
   services.openssh.enable = true;
-  # Define the systemd service
-  systemd.services.ssh2baaas = {
-    description = "AutoSSH service";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.autossh}/bin/autossh -M 20123 -N -i /home/vlad/.ssh/id_ed25519 -L 5500:localhost:22 wnik@bots.baaas.org";
-      Restart = "always";
-      User = "root";
-    };
-  };
+  
   # DO NOT EDIT
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

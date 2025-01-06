@@ -1,7 +1,8 @@
-{pkgs,lib,...}:
-
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -9,8 +10,8 @@
         layer = "top";
         position = "top";
         height = 50;
-        modules-left = [ "custom/power" "hyprland/workspaces" ];
-        modules-right =  ["tray" "cpu" "memory" "pulseaudio" "clock" ];
+        modules-left = ["custom/power" "hyprland/workspaces"];
+        modules-right = ["tray" "backlight" "network" "cpu" "memory" "battery" "pulseaudio" "clock"];
         cpu = {
           format = " {usage}%";
         };
@@ -29,6 +30,12 @@
         };
         clock = {
           tooltip-format = "{:%Y-%b-%d, %a}";
+        };
+        battery = {
+          format = "{capacity}  ";
+        };
+        backlight = {
+          format = "{percent}  ";
         };
       };
     };
@@ -103,6 +110,6 @@
         #waybar .separator {
          margin: 0 5px;
         }
-      '';
+    '';
   };
 }

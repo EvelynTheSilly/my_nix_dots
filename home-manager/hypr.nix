@@ -1,8 +1,9 @@
-{pkgs,lib,inputs,...}:
-
-
 {
-
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   programs.kitty.enable = true;
   # Variables for Hostnames
   wayland.windowManager.hyprland = {
@@ -12,72 +13,73 @@
     ];
     xwayland.enable = true;
     settings = {
-      "$mod" = "SUPER"; 
+      "$mod" = "SUPER";
       "$term" = "kitty";
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";
-      
-      bind = [
-        #focus moving
-        "$mod, H, hy3:movefocus, l"
-        
-        "$mod, L, hy3:movefocus, r"
-        
-        "$mod, K, hy3:movefocus, u"
-        
-        "$mod, J, hy3:movefocus, d"
 
-        #window moving
-        "$mod SHIFT, H, hy3:movewindow, l"
-        
-        "$mod SHIFT, L, hy3:movewindow, r"
-        
-        "$mod SHIFT, K, hy3:movewindow, u"
-        
-        "$mod SHIFT, J, hy3:movewindow, d"
+      bind =
+        [
+          #focus moving
+          "$mod, H, hy3:movefocus, l"
 
-        "$mod CONTROL_L, L, resizeactive, -40 0"
+          "$mod, L, hy3:movefocus, r"
 
-        "$mod CONTROL_L, H, resizeactive, 40 0"
+          "$mod, K, hy3:movefocus, u"
 
-        "$mod CONTROL_L, K, resizeactive, 0 40"
+          "$mod, J, hy3:movefocus, d"
 
-        "$mod CONTROL_L, J, resizeactive, 0 -40"     
-        
-        #move workspace to other monitor
-        "$mod, left, movecurrentworkspacetomonitor, 0"
-        "$mod, right, movecurrentworkspacetomonitor, 1"
+          #window moving
+          "$mod SHIFT, H, hy3:movewindow, l"
 
-        
-        "$mod, T, exec, kitty"
-        
-        "$mod, F, togglefloating"
+          "$mod SHIFT, L, hy3:movewindow, r"
 
-        "$mod, Y, exec, kitty --hold -e btop"
-        
-        "$mod, B, exec, firefox"
+          "$mod SHIFT, K, hy3:movewindow, u"
 
-        "$mod, D, exec, $runner"
+          "$mod SHIFT, J, hy3:movewindow, d"
 
-        "$mod, S, exec, $screenshotter"
+          "$mod CONTROL_L, L, resizeactive, -40 0"
 
-        "$mod, Q, killactive,"
+          "$mod CONTROL_L, H, resizeactive, 40 0"
 
-        "$mod, C, togglesplit"
-      ]
-      ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..9} to [move app to] workspace {1..9}
-        # also binds $mod {1..9} to move user to workspace {1..9} 
-        builtins.concatLists (builtins.genList (i:
-            let ws = i + 1;
-            in [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspacesilent, ${toString ws}"
-            ]
-          )
-          9)
-      );
+          "$mod CONTROL_L, K, resizeactive, 0 40"
+
+          "$mod CONTROL_L, J, resizeactive, 0 -40"
+
+          #move workspace to other monitor
+          "$mod, left, movecurrentworkspacetomonitor, 0"
+          "$mod, right, movecurrentworkspacetomonitor, 1"
+
+          "$mod, T, exec, kitty"
+
+          "$mod, F, togglefloating"
+
+          "$mod, Y, exec, kitty --hold -e btop"
+
+          "$mod, B, exec, firefox"
+
+          "$mod, D, exec, $runner"
+
+          "$mod, S, exec, $screenshotter"
+
+          "$mod, Q, killactive,"
+
+          "$mod, C, togglesplit"
+        ]
+        ++ (
+          # workspaces
+          # binds $mod + [shift +] {1..9} to [move app to] workspace {1..9}
+          # also binds $mod {1..9} to move user to workspace {1..9}
+          builtins.concatLists (builtins.genList (
+              i: let
+                ws = i + 1;
+              in [
+                "$mod, code:1${toString i}, workspace, ${toString ws}"
+                "$mod SHIFT, code:1${toString i}, movetoworkspacesilent, ${toString ws}"
+              ]
+            )
+            9)
+        );
       env = [
         "HYPRCURSOR_THEME,catppuccin-latte-mauve-crusors"
         "HYPRCURSOR_SIZE,24"

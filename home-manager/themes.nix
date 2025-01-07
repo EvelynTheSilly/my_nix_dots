@@ -9,4 +9,5 @@
     flavor = "latte";
     accent = "mauve";
   };
+  catppuccin.zed.enable = false;
 } 

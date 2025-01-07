@@ -70,6 +70,20 @@
     };
   };
 
+  programs.zed-editor = {
+    enable = true;
+    userSettings = {
+      ui_font_size = 16;
+      buffer_font_size = 16;
+      theme = {
+        mode = "dark";
+        dark = "Catppuccin Mocha";
+        light = "Catppuccin Latte";
+      };
+      vim_mode = true;
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

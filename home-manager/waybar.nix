@@ -11,7 +11,7 @@
         position = "top";
         height = 50;
         modules-left = ["custom/power" "hyprland/workspaces"];
-        modules-right = ["tray" "backlight" "network" "cpu" "memory" "battery" "pulseaudio" "clock"];
+        modules-right = ["tray" "backlight" "cpu" "memory" "battery" "pulseaudio" "clock"];
         cpu = {
           format = " {usage}%";
         };

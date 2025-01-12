@@ -15,7 +15,7 @@
     enable = true;
     enable32Bit = true;
   };
-  
+
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -26,10 +26,10 @@
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-  }; 
+  };
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   # Set your time zone.
@@ -37,20 +37,28 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.ratbagd.enable = true;
-  services.displayManager.ly.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "matrix";
+    };
+  };
   #services.desktopManager.plasma6.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
   fonts.packages = with pkgs; [
-    nerd-fonts.hack    
+    nerd-fonts.hack
   ];
-   
-  
+
+
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
+      nil
+      nixd
+      nm-tray
       linuxKernel.packages.linux_6_6.perf
       hyprpaper
       tree
@@ -109,11 +117,11 @@
       fi
 
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      fastfetch 
+      fastfetch
     '';
   };
   programs.firefox.enable = true;
-  
+
   environment.systemPackages = with pkgs; [
     wget
     libglvnd
@@ -127,9 +135,9 @@
     autossh
    ];
 
-  
+
   services.openssh.enable = true;
-  
+
   # DO NOT EDIT
   system.stateVersion = "24.11"; # Did you read the comment?
 }

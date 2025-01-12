@@ -24,7 +24,7 @@
         "custom/power" = {
           format = "pwr";
           tooltip = false;
-          on-click = "wlogout";
+          on-click = "wlogout -b 2";
           on-click-right = "wlogout --protocol layer-shell";
           class = "power-button";
         };

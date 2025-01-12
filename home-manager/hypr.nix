@@ -46,6 +46,10 @@
 
           "$mod CONTROL_L, J, resizeactive, 0 -40"
 
+          "$mod ,E , hy3:makegroup, tab" #make tab group
+
+          "$mod SHIFT, E, hy3:makegroup, opposite"
+
           #move workspace to other monitor
           "$mod, left, movecurrentworkspacetomonitor, 0"
           "$mod, right, movecurrentworkspacetomonitor, 1"
@@ -54,7 +58,9 @@
 
           "$mod, F, togglefloating"
 
-          "$mod, Y, exec, kitty --hold -e btop"
+          "$mod SHIFT, F, fullscreen"
+
+          "$mod, Y, exec, kitty --class btop --hold -e btop"
 
           "$mod, B, exec, firefox"
 
@@ -92,6 +98,10 @@
           "grp:win_space_toggle"
         ];
       };
+      windowrulev2 = [
+        "float,class:^(btop)$"
+      ];
+
       # mouse bindings
       bindm = [
         # move window
@@ -107,6 +117,7 @@
         "hyprland-per-window-layout"
         "waybar"
         "dunst"
+        "nmtray"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
       decoration = {
@@ -120,6 +131,8 @@
           autotile = {
             enable = true;
           };
+          no_gaps_when_only = 1; # disable gaps when only one window on screen
+
         };
       };
     };

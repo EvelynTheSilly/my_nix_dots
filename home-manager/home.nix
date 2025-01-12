@@ -19,6 +19,7 @@
     ./hyprutils.nix
     ./fastfetch.nix
     ./themes.nix
+    ./wlogout.nix
   ];
 
   nixpkgs = {
@@ -51,7 +52,7 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     dunst
   ];
 
@@ -60,7 +61,7 @@
   programs.git = {
     enable = true;
     userName = "vlad";
-    userEmail = "vlad@nikulin.name"; 
+    userEmail = "vlad@nikulin.name";
   };
 
   programs.kitty = {
@@ -81,7 +82,21 @@
         light = "Catppuccin Latte";
       };
       vim_mode = true;
-    };
+      format_on_save = "on";
+            assistant = {
+          default_model = {
+            provider = "zed.dev";
+            model = "claude-3-5-sonnet";
+          };
+          inline_alternatives = [
+            {
+              provider = "zed.dev";
+              model = "gpt-4o";
+            }
+          ];
+          version = 2;
+        };
+      };
   };
 
   # Nicely reload system units when changing configs

@@ -71,6 +71,8 @@
           "$mod, Q, killactive,"
 
           "$mod, C, togglesplit"
+
+          "$mod, V, exec, cliphist list | wofi -S dmenu -d | cliphist decode | wl-copy"
         ]
         ++ (
           # workspaces
@@ -112,12 +114,13 @@
         "$mod ALT, mouse:272, resizewindow"
       ];
       exec-once = [
+        "wl-paste --watch cliphist store"
         "$term"
         "hyprpaper"
         "hyprland-per-window-layout"
         "waybar"
         "dunst"
-        "nmtray"
+        "nm-tray"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
       decoration = {

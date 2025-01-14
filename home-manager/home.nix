@@ -62,6 +62,9 @@
     enable = true;
     userName = "vlad";
     userEmail = "vlad@nikulin.name";
+    extraConfig = {
+      pull.rebase = "true";
+    };
   };
 
   programs.kitty = {

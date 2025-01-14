@@ -56,11 +56,8 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-<<<<<<< HEAD
       cbonsai
-=======
       cargo-generate
->>>>>>> 5d8be43 (i think so)
       trunk
       nil
       nixd

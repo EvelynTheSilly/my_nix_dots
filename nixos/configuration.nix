@@ -95,6 +95,7 @@
       ranger
       arandr
       btop
+      wasm-bindgen-cli
     ];
     shell = pkgs.zsh;
   };

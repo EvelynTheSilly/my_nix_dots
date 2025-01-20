@@ -107,6 +107,7 @@
       ranger
       arandr
       btop
+      obsidian
       wasm-bindgen-cli
       vscodium
     ];
@@ -138,6 +139,7 @@
       fi
 
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      fastfetch
     '';
   };
   programs.firefox.enable = true;

@@ -72,8 +72,8 @@ if [ "$run_cmd2" = true ]; then
 fi
 # Commit to git with nix generation data as commit message
 if [ "$run_cmd1" = true ] || [ "$run_cmd2" = true ]; then
-  nix_generation=$(nix eval --impure --expr '(import <nixpkgs> {}).lib.mkDefault ((builtins.getFlake ".").nixosConfigurations.${(hostname}).config.system.nixVersion)' --raw)
+  nix_generation=$(nixos-rebuild list-generations | grep current)
 
-  git add .
+  git add *
   git commit -m "Nix generation: $nix_generation"
 fi

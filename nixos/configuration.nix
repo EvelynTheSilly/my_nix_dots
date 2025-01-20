@@ -41,6 +41,9 @@
     enable = true;
     settings = {
       animation = "matrix";
+      #bg = "0xC618";
+      clear_password = true;
+      #fg = "0xC618";
     };
   };
   #services.desktopManager.plasma6.enable = true;
@@ -73,6 +76,8 @@
       (discord-canary.override{
         withVencord = true;
       })
+      kind
+      docker
       keymapp
       neovim
       steam

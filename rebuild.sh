@@ -3,7 +3,7 @@
 
 #command 1: sudo nixos-rebuild switch --flake .#desktop
 #command 2: home-manager switch --flake .#vlad@desktop
-git add *
+git add *&>/dev/null
 # Display help message
 show_help() {
   echo "Usage: $(basename "$0") [options]"

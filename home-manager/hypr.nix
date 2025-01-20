@@ -14,7 +14,9 @@
     xwayland.enable = true;
     settings = {
       "$mod" = "SUPER";
-      "$term" = ''kitty -e "fastfetch; zsh"'';
+      "$term" = ''
+        kitty -e "fastfetch"
+      '';
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";
 

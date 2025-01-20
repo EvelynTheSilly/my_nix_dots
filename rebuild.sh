@@ -3,7 +3,7 @@
 
 #command 1: sudo nixos-rebuild switch --flake .#desktop
 #command 2: home-manager switch --flake .#vlad@desktop
-
+git add *
 # Display help message
 show_help() {
   echo "Usage: $(basename "$0") [options]"
@@ -74,6 +74,5 @@ fi
 if [ "$run_cmd1" = true ] || [ "$run_cmd2" = true ]; then
   nix_generation=$(nixos-rebuild list-generations | grep current)
 
-  git add *
   git commit -m "Nix generation: $nix_generation"
 fi

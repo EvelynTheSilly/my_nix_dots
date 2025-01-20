@@ -139,7 +139,6 @@
       fi
 
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      fastfetch
     '';
   };
   programs.firefox.enable = true;
@@ -157,7 +156,7 @@
     autossh
    ];
 
-
+  services.docker.enable = true;
   services.openssh.enable = true;
 
   # DO NOT EDIT

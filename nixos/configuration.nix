@@ -110,6 +110,7 @@
       obsidian
       wasm-bindgen-cli
       vscodium
+      kubectl
     ];
     shell = pkgs.zsh;
   };

@@ -15,7 +15,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = ''
-        kitty -e fastfetch
+        kitty -e bash -c "fastfetch;zsh"
       '';
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";

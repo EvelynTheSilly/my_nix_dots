@@ -25,7 +25,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -70,7 +70,10 @@
       linuxKernel.packages.linux_6_6.perf
       hyprpaper
       tree
-      vesktop
+      (discord-canary.override{
+        withVencord = true;
+      })
+      keymapp
       neovim
       steam
       helix
@@ -97,6 +100,7 @@
       arandr
       btop
       wasm-bindgen-cli
+      vscodium
     ];
     shell = pkgs.zsh;
   };

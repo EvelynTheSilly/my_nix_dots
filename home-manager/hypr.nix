@@ -101,6 +101,7 @@
         ];
       };
       windowrulev2 = [
+        "size,50x25,class:btop"
         "float,class:^(btop)$"
       ];
 
@@ -134,8 +135,7 @@
           autotile = {
             enable = true;
           };
-          no_gaps_when_only = 1; # disable gaps when only one window on screen
-
+          no_gaps_when_only = 2; # disable gaps when only one window on screen
         };
       };
     };

@@ -15,7 +15,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = ''
-        kitty -e bash -c "fastfetch;zsh"
+        kitty  bash -c "fastfetch;zsh"
       '';
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";
@@ -56,7 +56,7 @@
           "$mod, left, movecurrentworkspacetomonitor, 0"
           "$mod, right, movecurrentworkspacetomonitor, 1"
 
-          "$mod, T, exec, kitty"
+          "$mod, T, exec, $term"
 
           "$mod, F, togglefloating"
 

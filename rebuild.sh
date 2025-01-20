@@ -62,13 +62,13 @@ fi
 if [ "$run_cmd1" = true ]; then
   echo "rebuilding nix"
   echo "$(git status ./nixos --porcelain)"
-  sudo nixos-rebuild switch --flake .
+  sudo nixos-rebuild switch --flake .&> nixos-switch.log ||(cat nixos-switch.log | grep --color error)
 fi
 
 if [ "$run_cmd2" = true ]; then
   echo "rebuilding home manager"
-  echo "$(git status ./home-manager --porcelain)"
-  home-manager switch --flake .
+  echo "$(git diff ./home-manager --porcelain)"
+  home-manager switch --flake . &> homemanager-switch.log ||(cat homemanager-switch.log | grep --color error)
 fi
 # Commit to git with nix generation data as commit message
 if [ "$run_cmd1" = true ] || [ "$run_cmd2" = true ]; then

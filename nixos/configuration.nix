@@ -60,7 +60,7 @@
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable sudo and network manager for the user.
+    extraGroups = [ "wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
     packages = with pkgs; [ #Full user app list
       dioxus-cli
       libnotify
@@ -156,7 +156,7 @@
     autossh
    ];
 
-  services.docker.enable = true;
+  virtualisation.docker.enable = true;
   services.openssh.enable = true;
 
   # DO NOT EDIT

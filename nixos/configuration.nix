@@ -9,56 +9,59 @@
     "nix-command"
     "flakes"
   ];
+
   nixpkgs.config.allowUnfree = true;
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-  # Load nvidia driver for Xorg and Wayland
+  # Load nvidia driver for Xorg
   services.xserver.videoDrivers = ["nvidia"];
-
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
+    #Beta nvidia driver, use stable for latest stable
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
   # Set your time zone.
   time.timeZone = "Europe/London";
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  #ratbagd, for g502 mouse drivers
   services.ratbagd.enable = true;
+
+  # LY display manager, basically just the login screen
   services.displayManager.ly = {
     enable = true;
     settings = {
       animation = "matrix";
-      #bg = "0xC618";
       clear_password = true;
-      #fg = "0xC618";
     };
   };
-  #services.desktopManager.plasma6.enable = true;
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+
   fonts.packages = with pkgs; [
     nerd-fonts.hack
   ];
 
-
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
+    extraGroups = [ "wheel" "networkmanager"]; # Enable sudo and network manager for the user.
+    packages = with pkgs; [ #Full user app list
       dioxus-cli
       libnotify
       cliphist

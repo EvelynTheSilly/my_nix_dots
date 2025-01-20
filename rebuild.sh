@@ -67,7 +67,7 @@ fi
 
 if [ "$run_cmd2" = true ]; then
   echo "rebuilding home manager"
-  echo "$(git diff ./home-manager --porcelain)"
+  echo "$(git status ./home-manager --porcelain)"
   home-manager switch --flake . &> homemanager-switch.log ||(cat homemanager-switch.log | grep --color error)
 fi
 # Commit to git with nix generation data as commit message

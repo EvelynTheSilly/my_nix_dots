@@ -103,10 +103,11 @@
   };
   programs.nushell = {
     enable = true;
-    extraConfig = ''
-      mkdir ($nu.data-dir | path join "vendor/autoload")
-      starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-    '';
+
+  };
+  programs.starship = {
+    enable = true;
+
   };
 
   # Nicely reload system units when changing configs

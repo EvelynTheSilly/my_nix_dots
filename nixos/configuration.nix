@@ -62,6 +62,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
     packages = with pkgs; [ #Full user app list
+      transmission_4
       tor-browser
       nushell
       starship

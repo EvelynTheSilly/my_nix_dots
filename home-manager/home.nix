@@ -102,7 +102,10 @@
       };
   };
   programs.nushell = {
-    configFile.source = ./config.nu;
+    configFile.text = ''
+      mkdir ($nu.data-dir | path join "vendor/autoload")
+      starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+    '';
   };
 
   # Nicely reload system units when changing configs

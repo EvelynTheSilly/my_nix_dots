@@ -102,7 +102,7 @@
       };
   };
   programs.nushell = {
-    configfile.source = ./config.nu;
+    configFile.source = ./config.nu;
   };
 
   # Nicely reload system units when changing configs

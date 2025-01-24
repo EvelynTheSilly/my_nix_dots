@@ -107,10 +107,6 @@
         # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
         configFile.source = ./config.nu;
         # for editing directly to config.nu
-        extraConfig = ''
-          mkdir ($nu.data-dir | path join "vendor/autoload")
-          starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-         '';
       };
      #carapace.enable = true;
      #carapace.enableNushellIntegration = true;

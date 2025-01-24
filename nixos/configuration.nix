@@ -119,7 +119,7 @@
       vscodium
       kubectl
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
   };
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;

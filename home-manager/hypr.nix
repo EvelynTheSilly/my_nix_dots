@@ -15,7 +15,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = ''
-        kitty  bash -c "fastfetch;zsh"
+        kitty  bash -c "fastfetch;nu"
       '';
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";
@@ -122,7 +122,7 @@
         "hyprpaper"
         "hyprland-per-window-layout"
         "waybar"
-        "dunst"
+        "swaync"
         "nm-tray"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];

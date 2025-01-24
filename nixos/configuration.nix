@@ -66,6 +66,7 @@
       tor-browser
       nushell
       starship
+      swaynotificationcenter
       dioxus-cli
       libnotify
       cliphist

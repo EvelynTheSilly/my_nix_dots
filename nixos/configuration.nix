@@ -67,6 +67,7 @@
       nushell
       starship
       swaynotificationcenter
+      vlc
       dioxus-cli
       libnotify
       cliphist

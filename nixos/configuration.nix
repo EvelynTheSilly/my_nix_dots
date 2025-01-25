@@ -104,7 +104,7 @@
       zig
       polkit_gnome
       hyprshot
-      lunarvim
+      ergogen
       zed-editor
       clang
       piper

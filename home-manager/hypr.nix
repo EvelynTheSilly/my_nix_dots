@@ -50,7 +50,9 @@
 
           "$mod ,E , hy3:makegroup, tab" #make tab group
 
-          "$mod SHIFT, E, hy3:makegroup, opposite"
+          "$mod SHIFT, E, hy3:makegroup, horizontal"
+
+          "$mod SHIFT, E, hy3:makegroup, vertical"
 
           #move workspace to other monitor
           "$mod, left, movecurrentworkspacetomonitor, 0"

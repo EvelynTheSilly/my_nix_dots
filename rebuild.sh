@@ -7,6 +7,8 @@ git add *&>/dev/null
 # Display help message
 show_help() {
   echo "Usage: $(basename "$0") [options]"
+  echo "rebuilds system based on modifications made to files in nixos and home-manager dir respectivly"
+  echo "not rebuilding nix/homemanager unless files are updated"
   echo
   echo "Options:"
   echo "  -f       Force run both commands irrespective of changes"

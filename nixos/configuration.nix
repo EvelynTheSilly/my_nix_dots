@@ -104,7 +104,6 @@
       zig
       polkit_gnome
       hyprshot
-      ergogen
       kicad
       zed-editor
       clang

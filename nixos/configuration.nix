@@ -75,9 +75,8 @@ in
     packages = with pkgs; [ #Full user app list
       ollama-cuda
       carapace
-      #google-cloud-sdk
       gdk
-      #google-cloud-sdk
+      google-cloud-sdk
       blueman
       bluez
       bc

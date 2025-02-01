@@ -63,6 +63,7 @@
     extraGroups = [ "wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
     packages = with pkgs; [ #Full user app list
       ollama-cuda
+      blueman
       bc
       transmission_4-qt
       tor-browser

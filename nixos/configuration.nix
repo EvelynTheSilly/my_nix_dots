@@ -64,6 +64,7 @@
     packages = with pkgs; [ #Full user app list
       ollama-cuda
       blueman
+      bluez
       bc
       transmission_4-qt
       tor-browser

@@ -77,6 +77,9 @@ in
       carapace
       #google-cloud-sdk
       gdk
+      #google-cloud-sdk
+      blueman
+      bluez
       bc
       bottles
       transmission_4-qt

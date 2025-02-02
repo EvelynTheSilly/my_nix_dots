@@ -99,7 +99,7 @@ in
       hyprpaper
       obs-studio
       tree
-      (discord-canary.override{
+      (discord.override{
         withVencord = true;
       })
       kind

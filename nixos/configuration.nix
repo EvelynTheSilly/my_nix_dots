@@ -100,7 +100,7 @@ in
       obs-studio
       tree
       (discord-canary.override{
-        withVencord = true;
+        #withVencord = true;
       })
       kind
       docker

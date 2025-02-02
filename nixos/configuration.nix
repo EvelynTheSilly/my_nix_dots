@@ -11,6 +11,7 @@ in
 {
   programs.nix-ld.enable = true; # dynamic executable fix
   programs.nix-ld.libraries = with pkgs; [
+    icu.dev
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];

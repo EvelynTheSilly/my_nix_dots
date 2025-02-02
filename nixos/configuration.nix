@@ -63,7 +63,11 @@
     extraGroups = [ "wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
     packages = with pkgs; [ #Full user app list
       ollama-cuda
-      google-cloud-sdk
+      (google-cloud-sdk.override {
+        withExtraComponents = (components: with components; [
+          gke-gcloud-auth-plugin
+        ]);
+      })
       bc
       transmission_4-qt
       tor-browser

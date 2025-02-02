@@ -105,7 +105,7 @@
         ];
       };
       windowrulev2 = [
-        "size,50x25,class:btop"
+        "size,10x10,class:btop"
         "float,class:^(btop)$"
       ];
 

@@ -14,9 +14,11 @@
         modules-right = ["tray" "backlight" "cpu" "memory" "battery" "pulseaudio" "clock"];
         cpu = {
           format = " {usage}%";
+          on-click = "kitty --class btop --hold -e btop";
         };
         memory = {
           format = " {}%";
+          on-click = "kitty --class btop --hold -e btop";
         };
         pulseaudio = {
           format = " {volume}%";

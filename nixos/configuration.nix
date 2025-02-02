@@ -68,7 +68,7 @@ in
 
     packages = with pkgs; [ #Full user app list
       ollama-cuda
-      caraspace
+      carapace
       #google-cloud-sdk
       gdk
       bc

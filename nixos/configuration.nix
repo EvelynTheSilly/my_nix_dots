@@ -64,7 +64,7 @@
     packages = with pkgs; [ #Full user app list
       ollama-cuda
       (google-cloud-sdk.override {
-        withExtraComponents = (components: with components; [
+        packages = (components: with components; [
           gke-gcloud-auth-plugin
         ]);
       })

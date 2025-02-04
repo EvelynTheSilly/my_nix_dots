@@ -78,6 +78,7 @@ in
       #google-cloud-sdk
       gdk
       bc
+      bottles
       transmission_4-qt
       tor-browser
       nushell

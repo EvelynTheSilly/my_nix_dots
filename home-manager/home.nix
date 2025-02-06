@@ -77,6 +77,7 @@
   programs.zed-editor = {
     enable = true;
     userSettings = {
+      soft_wrap = "editor_width";
       ui_font_size = 16;
       buffer_font_size = 16;
       theme = {

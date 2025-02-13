@@ -76,6 +76,7 @@ in
       ollama-cuda
       carapace
       gdk
+      lutris
       google-cloud-sdk
       blueman
       bluez

@@ -75,6 +75,7 @@ in
     packages = with pkgs; [ #Full user app list
       ollama-cuda
       zerotierone
+      tealdeer
       carapace
       gdk
       lutris

@@ -83,6 +83,7 @@ in
       blueman
       bluez
       bc
+      termusic
       bottles
       transmission_4-qt
       tor-browser

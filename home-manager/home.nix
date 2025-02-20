@@ -20,6 +20,7 @@
     ./fastfetch.nix
     ./themes.nix
     ./wlogout.nix
+    ./zed.nix
   ];
 
   nixpkgs = {
@@ -72,35 +73,6 @@
     settings = {
       background_opacity = 0.5;
     };
-  };
-
-  programs.zed-editor = {
-    enable = true;
-    userSettings = {
-      soft_wrap = "editor_width";
-      ui_font_size = 16;
-      buffer_font_size = 16;
-      theme = {
-        mode = "dark";
-        dark = "Catppuccin Mocha";
-        light = "Catppuccin Latte";
-      };
-      vim_mode = true;
-      format_on_save = "on";
-            assistant = {
-          default_model = {
-            provider = "zed.dev";
-            model = "claude-3-5-sonnet";
-          };
-          inline_alternatives = [
-            {
-              provider = "zed.dev";
-              model = "gpt-4o";
-            }
-          ];
-          version = 2;
-        };
-      };
   };
 
   programs = {

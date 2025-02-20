@@ -73,7 +73,6 @@ in
     extraGroups = [ "wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
 
     packages = with pkgs; [ #Full user app list
-      ollama-cuda
       zerotierone
       tealdeer
       carapace
@@ -83,7 +82,7 @@ in
       blueman
       bluez
       bc
-      
+
       bottles
       transmission_4-qt
       tor-browser
@@ -126,7 +125,6 @@ in
       zig
       polkit_gnome
       hyprshot
-      kicad
       zed-editor
       clang
       piper

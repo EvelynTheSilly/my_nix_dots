@@ -65,10 +65,10 @@
         version = "2";
         default_open_ai_model = null;
 
-        default_model = {
-          provider = "zed.dev";
-          model = "gpt-4o";
-        };
+        #default_model = {
+        #  provider = "zed.dev";
+        #  model = "gpt-4o";
+        #};
       };
 
       hour_format = "hour24";

@@ -63,7 +63,7 @@
       assistant = {
         enabled = true;
         version = "2";
-        default_open_ai_model = null;
+        default_open_ai_model = "4o";
 
         #default_model = {
         #  provider = "zed.dev";

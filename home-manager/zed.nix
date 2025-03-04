@@ -98,7 +98,7 @@
         line_height = "comfortable";
         option_as_meta = false;
         button = false;
-        shell = "nu";
+        shell = "system";
         toolbar = {
           title = true;
         };

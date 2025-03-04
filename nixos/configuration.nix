@@ -82,7 +82,7 @@ in
       blueman
       bluez
       bc
-
+      rustlings
       bottles
       transmission_4-qt
       tor-browser

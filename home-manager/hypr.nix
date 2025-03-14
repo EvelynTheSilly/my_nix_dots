@@ -64,7 +64,7 @@
 
           "$mod SHIFT, F, fullscreen"
 
-          "$mod, Y, exec, kitty --class btop --hold -e btop"
+          "$mod, Y, exec, sudo kitty --class btop --hold -e btop"
 
           "$mod, B, exec, firefox"
 

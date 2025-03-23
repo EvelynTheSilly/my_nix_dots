@@ -105,7 +105,7 @@ in
       hyprpaper
       obs-studio
       tree
-      (discord-canary.override{
+      (discord-ptb.override{
         withVencord = true;
       })
       kind

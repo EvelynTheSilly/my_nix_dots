@@ -2,8 +2,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -13,7 +12,7 @@
       "basher"
       "Catppuccin"
     ];
-    extraPackages = [ pkgs.nixd ];
+    extraPackages = [pkgs.nixd];
 
     userSettings = {
       vim_mode = true;
@@ -133,7 +132,8 @@
 
         "rust-analyzer" = {
           # Quote the LSP name
-          binary = {  # run `which rust-analyzer`
+          binary = {
+            # run `which rust-analyzer`
             path = "/etc/profiles/per-user/vlad/bin/rust-analyzer";
           };
           settings = {
@@ -202,6 +202,5 @@
         };
       };
     };
-
   };
 }

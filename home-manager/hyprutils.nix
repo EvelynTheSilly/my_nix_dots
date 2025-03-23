@@ -1,7 +1,8 @@
-{pkgs, lib,...}:
-
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -18,7 +19,6 @@
   programs.hyprlock = {
     enable = true;
     settings = {
-
       "$accent" = "rgb(cba6f7)"; #mauve accent
       "$surface0" = "rbg(313244)";
       "$text" = "rbg(cdd6f4)"; #mauve accent

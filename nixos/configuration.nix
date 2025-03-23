@@ -1,14 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, inputs, ... }:
-let
-  gdk = pkgs.google-cloud-sdk.withExtraComponents( with pkgs.google-cloud-sdk.components; [
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: let
+  gdk = pkgs.google-cloud-sdk.withExtraComponents (with pkgs.google-cloud-sdk.components; [
     gke-gcloud-auth-plugin
   ]);
-in
-{
+in {
   programs.nix-ld.enable = true; # dynamic executable fix
   programs.nix-ld.libraries = with pkgs; [
     icu.dev
@@ -43,7 +46,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -70,9 +73,10 @@ in
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
+    extraGroups = ["wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
 
-    packages = with pkgs; [ #Full user app list
+    packages = with pkgs; [
+      #Full user app list
       zerotierone
       tealdeer
       carapace
@@ -105,9 +109,14 @@ in
       hyprpaper
       obs-studio
       tree
-      (discord-ptb.override{
+      (discord-canary.override {
         withVencord = true;
       })
+      (
+        discord-ptb.override {
+          withVencord = true;
+        }
+      )
       kind
       docker
       keymapp
@@ -158,7 +167,7 @@ in
         pkgs.zsh-powerlevel10k
       ];
     };
-    shellInit =  ''
+    shellInit = ''
       # Path to the OpenAI API key file
       OPENAI_KEY_FILE="$HOME/.config/env/openai.env"
 
@@ -183,7 +192,7 @@ in
     wlogout
     catppuccin-cursors
     autossh
-   ];
+  ];
 
   virtualisation.docker.enable = true;
   services.openssh.enable = true;

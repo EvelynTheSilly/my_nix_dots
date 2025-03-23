@@ -1,7 +1,8 @@
-{pkgs, lib,...}:
-
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.fastfetch = {
     enable = true;
     settings = {
@@ -71,4 +72,4 @@
       ];
     };
   };
-} 
+}

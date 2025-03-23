@@ -1,7 +1,8 @@
-{pkgs, lib,...}:
-
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.wlogout = {
     enable = true;
     layout = [

@@ -76,21 +76,23 @@
   };
 
   programs = {
-      nushell = { enable = true;
-        # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
-        configFile.source = ./config.nu;
-        # for editing directly to config.nu
-      };
-     #carapace.enable = true;
-     #carapace.enableNushellIntegration = true;
+    nushell = {
+      enable = true;
+      # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
+      configFile.source = ./config.nu;
+      # for editing directly to config.nu
+    };
+    #carapace.enable = true;
+    #carapace.enableNushellIntegration = true;
 
-     starship = { enable = true;
-         settings = {
-           add_newline = true;
-           character = {
-           success_symbol = "[➜](bold green)";
-           error_symbol = "[➜](bold red)";
-         };
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = true;
+        character = {
+          success_symbol = "[➜](bold green)";
+          error_symbol = "[➜](bold red)";
+        };
       };
     };
   };

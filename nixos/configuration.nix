@@ -87,6 +87,7 @@ in {
       bluez
       bc
       rustlings
+      r2modman
       bottles
       transmission_4-qt
       tor-browser

@@ -77,7 +77,7 @@ in {
 
     packages = with pkgs; [
       #Full user app list
-      zerotierone
+      
       tealdeer
       carapace
       gdk

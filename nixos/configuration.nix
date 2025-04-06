@@ -77,7 +77,7 @@ in {
 
     packages = with pkgs; [
       #Full user app list
-      
+
       tealdeer
       carapace
       gdk
@@ -113,11 +113,6 @@ in {
       (discord-canary.override {
         withVencord = true;
       })
-      (
-        discord-ptb.override {
-          withVencord = true;
-        }
-      )
       kind
       docker
       keymapp

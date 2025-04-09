@@ -1,4 +1,4 @@
-# Vlad's dots
+# eve's dots
 
 my nix dots
 feel free to use as inspiration/copy

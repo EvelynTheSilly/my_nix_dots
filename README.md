@@ -1,4 +1,4 @@
-# eve's dots
+# Eve's dots
 
 my nix dots
 feel free to use as inspiration/copy

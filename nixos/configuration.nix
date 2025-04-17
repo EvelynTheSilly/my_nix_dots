@@ -112,6 +112,11 @@ in {
       (discord-canary.override {
         withVencord = true;
       })
+      (
+        discord-ptb.override {
+          withVencord = true;
+        }
+      )
       kind
       docker
       keymapp

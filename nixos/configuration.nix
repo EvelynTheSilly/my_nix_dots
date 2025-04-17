@@ -23,7 +23,7 @@ in {
     "flakes"
   ];
   sound.enable = true;
-  hardware.pipewire = {
+  services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;

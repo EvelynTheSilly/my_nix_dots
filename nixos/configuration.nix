@@ -117,6 +117,11 @@ in {
           withVencord = true;
         }
       )
+      (
+              discord.override {
+                withVencord = true;
+              }
+            )
       kind
       docker
       keymapp

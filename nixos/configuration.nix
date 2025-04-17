@@ -119,7 +119,7 @@ in {
       })
       (
         discord-ptb.override {
-          #withVencord = true;
+          withVencord = true;
         }
       )
       kind

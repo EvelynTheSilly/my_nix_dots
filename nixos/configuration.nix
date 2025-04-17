@@ -116,12 +116,10 @@ in {
       tree
       (discord-canary.override {
         withVencord = true;
-        #withPipewire = true; # Explicitly enable PipeWire support
       })
       (
         discord-ptb.override {
-          withVencord = true;
-         # withPipewire = true; # Explicitly enable PipeWire support
+          #withVencord = true;
         }
       )
       kind

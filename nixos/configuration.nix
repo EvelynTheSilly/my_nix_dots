@@ -22,7 +22,13 @@ in {
     "nix-command"
     "flakes"
   ];
-
+  sound.enable = true;
+  hardware.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.android_sdk.accept_license = true;
   # Enable OpenGL
@@ -73,7 +79,7 @@ in {
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "docker"]; # Enable sudo and network manager for the user.
+    extraGroups = ["wheel" "networkmanager" "docker" "audio" "pipewire"]; # Enable sudo and network manager for the user.
 
     packages = with pkgs; [
       #Full user app list
@@ -111,17 +117,14 @@ in {
       tree
       (discord-canary.override {
         withVencord = true;
+        withPipewire = true; # Explicitly enable PipeWire support
       })
       (
         discord-ptb.override {
           withVencord = true;
+          withPipewire = true; # Explicitly enable PipeWire support
         }
       )
-      (
-              discord.override {
-                withVencord = true;
-              }
-            )
       kind
       docker
       keymapp

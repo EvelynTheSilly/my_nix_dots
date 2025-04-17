@@ -24,7 +24,7 @@ in {
   ];
 
   nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config.android_sdk.accept_license = true;
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
@@ -77,7 +77,6 @@ in {
 
     packages = with pkgs; [
       #Full user app list
-
       tealdeer
       carapace
       gdk

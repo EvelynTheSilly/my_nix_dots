@@ -11,6 +11,7 @@
       "lua"
       "basher"
       "Catppuccin"
+      "rust"
     ];
     extraPackages = [pkgs.nixd];
 
@@ -120,6 +121,9 @@
         };
         TOML = {
           formatter = "taplo";
+        };
+        NIX = {
+          formatter = "alejandra";
         };
       };
 

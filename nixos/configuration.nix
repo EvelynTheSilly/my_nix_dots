@@ -122,6 +122,7 @@ in {
           withVencord = true;
         }
       )
+      alejandra
       kind
       docker
       keymapp

@@ -63,8 +63,7 @@ in {
   services.ratbagd.enable = true;
 
   # LY display manager, basically just the login screen
-  services.displayManager.ly = {
-    enable = true;
+  services.displayManager.ly = {enable = true;
     settings = {
       animation = "matrix";
       clear_password = true;

@@ -51,9 +51,13 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-  networking.nameservers = ["192.168.86.34" "1.1.1.1"];
-  
+  networking = {
+      networkmanager.enable = true; # Easiest to use and most distros use this by default.
+      nameservers = ["192.168.86.34" "1.1.1.1"];
+      dhcpcd.enable = false; # Optional: disable dhcpcd if you're using NetworkManager or systemd-networkd
+      useDHCP = false;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 

@@ -1,5 +1,10 @@
-{inputs,lib,config,pkgs,...}:
 {
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../home-manager/home.nix
   ];
@@ -9,7 +14,7 @@
       monitor = [
         "DP-1, 3440x1440@165, 0x0, 1"
         "DP-2, 1920x1080@100, 3440x0, 1"
-      ];  
+      ];
     };
   };
   services.hyprpaper = {
@@ -22,6 +27,6 @@
         "DP-1, ~/images/wallpapers/wp.png"
         "DP-2, ~/images/wallpapers/wp2.png"
       ];
-    };  
+    };
   };
 }

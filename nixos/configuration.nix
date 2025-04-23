@@ -18,6 +18,9 @@ in {
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
+  imports = [
+    ./certs.nix
+  ];
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -52,17 +55,17 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
-      networkmanager.enable = true; # Easiest to use and most distros use this by default.
-      nameservers = ["192.168.86.34" ];
-      dhcpcd.enable = false; # Optional: disable dhcpcd if you're using NetworkManager or systemd-networkd
-      useDHCP = false;
+    networkmanager.enable = true; # Easiest to use and most distros use this by default.
+    nameservers = ["192.168.86.34"];
+    dhcpcd.enable = false; # Optional: disable dhcpcd if you're using NetworkManager or systemd-networkd
+    useDHCP = false;
   };
 
   # Force systemd-resolved to use your config
   services.resolved = {
     enable = true;
-    fallbackDns = [ "1.1.1.1" ]; # Again, your homelab first
-    domains = [ "~." ]; # Apply DNS to all domains
+    fallbackDns = ["1.1.1.1"]; # Again, your homelab first
+    domains = ["~."]; # Apply DNS to all domains
     extraConfig = ''
       DNSStubListener=yes
     '';
@@ -77,7 +80,8 @@ in {
   services.ratbagd.enable = true;
 
   # LY display manager, basically just the login screen
-  services.displayManager.ly = {enable = true;
+  services.displayManager.ly = {
+    enable = true;
     settings = {
       animation = "matrix";
       clear_password = true;

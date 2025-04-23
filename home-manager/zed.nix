@@ -66,7 +66,7 @@
         default_open_ai_model = "4o";
 
         default_model = {
-        provider = "zed.dev";
+          provider = "zed.dev";
           model = "gpt-4o";
         };
       };

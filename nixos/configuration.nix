@@ -64,7 +64,7 @@ in {
 
   # Force systemd-resolved to use your config
   services.resolved = {
-    enable = true;
+    enable = false;
     fallbackDns = ["1.1.1.1"]; # Again, your homelab first
     domains = ["~."]; # Apply DNS to all domains
     extraConfig = ''

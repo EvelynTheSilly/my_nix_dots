@@ -93,7 +93,10 @@ in {
   fonts.packages = with pkgs; [
     nerd-fonts.hack
   ];
-
+  services.udev.extraRules = ''
+KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
+  '';
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;

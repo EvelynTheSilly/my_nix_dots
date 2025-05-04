@@ -102,6 +102,7 @@ in {
     packages = with pkgs; [
       #Full user app list
       tealdeer
+      ledger-live-desktop
       carapace
       gdk
       lutris

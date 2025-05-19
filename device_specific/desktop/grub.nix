@@ -10,8 +10,8 @@ in{
         enable = true;
         version = 2;
         devices = ["/dev/sda3"];
-        theme = ./grub/catpuccin-mocha-grub-theme;
+        #theme = ./grub/catpuccin-mocha-grub-theme;
         useOSProber = true;
+        timeout = 1;
     };
-    boot.loader.timeout = 1;
 }

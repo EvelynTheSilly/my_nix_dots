@@ -8,7 +8,7 @@
 in{
     boot.loader.grub = {
         enable = true;
-        devices = ["/dev/sda3"];
+        devices = ["/dev/sda"];
         #theme = ./grub/catpuccin-mocha-grub-theme;
         useOSProber = true;
     };

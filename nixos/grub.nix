@@ -12,5 +12,5 @@ in{
         #theme = ./grub/catpuccin-mocha-grub-theme;
         useOSProber = true;
     };
-    timeout = 1;
+    boot.loader.timeout = 1;
 }

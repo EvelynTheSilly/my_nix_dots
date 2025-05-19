@@ -20,6 +20,7 @@ in {
   ];
   imports = [
     ./certs.nix
+    ./grub.nix
   ];
   nix.settings.experimental-features = [
     "nix-command"

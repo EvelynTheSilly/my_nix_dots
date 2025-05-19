@@ -8,7 +8,6 @@
   networking.hostName = "desktop";
   imports = [
     ../../nixos/configuration.nix
-    ./grub.nix
     ./hardware-configuration.nix
   ];
   environment.systemPackages = with pkgs; [

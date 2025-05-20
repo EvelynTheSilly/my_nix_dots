@@ -133,7 +133,7 @@
       };
       general = {
         layout = "hy3";
-            "col.activeborder" = "rgb(111,48,158)";
+            "col.active_border" = "rgb(111,48,158)";
       };
       plugin = {
         hy3 = {

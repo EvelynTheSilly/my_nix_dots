@@ -151,7 +151,7 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
       keymapp
       neovim
       steam
-      helix
+      evil-helix
       prismlauncher
       telegram-desktop
       fastfetch

@@ -94,8 +94,8 @@ in {
     nerd-fonts.hack
   ];
   services.udev.extraRules = ''
-KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666"
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
   '';
   security.polkit.enable = true;
   users.users.vlad = {
@@ -137,14 +137,14 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
       hyprpaper
       obs-studio
       tree
-      #(discord-canary.override {
-      #  withVencord = true;
-      #})
-      #(
-          #discord-ptb.override {
-          #withVencord = true;
-          #}
-        #)
+      (discord-canary.override {
+        withVencord = true;
+      })
+      (
+        discord-ptb.override {
+          withVencord = true;
+        }
+      )
       alejandra
       kind
       docker

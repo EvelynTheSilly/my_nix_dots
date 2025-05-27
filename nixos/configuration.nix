@@ -109,7 +109,6 @@ in {
       carapace
       gdk
       python3
-      pythonPackages.tkinter
       lutris
       google-cloud-sdk
       blueman

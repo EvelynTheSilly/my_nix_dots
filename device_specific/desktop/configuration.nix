@@ -11,8 +11,6 @@
     ./hardware-configuration.nix
   ];
   environment.systemPackages = with pkgs; [
-    kicad
-    ollama-cuda
   ];
   # Define the systemd service
   systemd.services.ssh2baaas = {

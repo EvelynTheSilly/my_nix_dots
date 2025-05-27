@@ -137,14 +137,14 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
       hyprpaper
       obs-studio
       tree
-      (discord-canary.override {
-        withVencord = true;
-      })
-      (
-        discord-ptb.override {
-          withVencord = true;
-        }
-      )
+      #(discord-canary.override {
+      #  withVencord = true;
+      #})
+      #(
+          #discord-ptb.override {
+          #withVencord = true;
+          #}
+        #)
       alejandra
       kind
       docker

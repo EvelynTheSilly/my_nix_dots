@@ -108,6 +108,8 @@ in {
       ledger-live-desktop
       carapace
       gdk
+      python3
+      pythonPackages.tkinter
       lutris
       google-cloud-sdk
       blueman

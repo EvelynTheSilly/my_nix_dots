@@ -45,7 +45,6 @@
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "vlad";
     homeDirectory = "/home/vlad";
@@ -61,7 +60,7 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userName = "vlad";
+    userName = "eve";
     userEmail = "vlad@nikulin.name";
     extraConfig = {
       pull.rebase = "true";

@@ -113,6 +113,7 @@ in {
       google-cloud-sdk
       blueman
       bluez
+      bluez-tools
       bc
       rustlings
       r2modman

@@ -51,6 +51,8 @@ in {
     #Beta nvidia driver, use stable for latest stable
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
+hardware,bluetooth.enable=true;
+        hardware.bluetooth.powerOnBoot=true;
 
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;

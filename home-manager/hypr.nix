@@ -126,6 +126,7 @@
         "waybar"
         "swaync"
         "nm-tray"
+        "blueman-applet"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
       decoration = {

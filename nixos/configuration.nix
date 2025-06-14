@@ -51,12 +51,10 @@ in {
     #Beta nvidia driver, use stable for latest stable
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
+
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
-  #boot.loader.systemd-boot.enable = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
     networkmanager.enable = true; # Easiest to use and most distros use this by default.

@@ -7,11 +7,16 @@
   pkgs,
   inputs,
   ...
-}: let
-  gdk = pkgs.google-cloud-sdk.withExtraComponents (with pkgs.google-cloud-sdk.components; [
-    gke-gcloud-auth-plugin
-  ]);
-in {
+}:
+let
+  gdk = pkgs.google-cloud-sdk.withExtraComponents (
+    with pkgs.google-cloud-sdk.components;
+    [
+      gke-gcloud-auth-plugin
+    ]
+  );
+in
+{
   programs.nix-ld.enable = true; # dynamic executable fix
   programs.nix-ld.libraries = with pkgs; [
     icu.dev
@@ -21,6 +26,7 @@ in {
   imports = [
     ./certs.nix
     ./grub.nix
+    ./niri.nix
   ];
   nix.settings.experimental-features = [
     "nix-command"
@@ -41,7 +47,7 @@ in {
   };
 
   # Load nvidia driver for Xorg
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -59,7 +65,7 @@ in {
   networking = {
     networkmanager.enable = true; # Easiest to use and most distros use this by default.
     networkmanager.dns = "none";
-    nameservers = ["31.50.158.123"];
+    nameservers = [ "31.50.158.123" ];
     dhcpcd.enable = false; # Optional: disable dhcpcd if you're using NetworkManager or systemd-networkd
     useDHCP = false;
   };
@@ -67,8 +73,8 @@ in {
   # Force systemd-resolved to use your config
   services.resolved = {
     enable = false;
-    fallbackDns = ["1.1.1.1"]; # Again, your homelab first
-    domains = ["~."]; # Apply DNS to all domains
+    fallbackDns = [ "1.1.1.1" ]; # Again, your homelab first
+    domains = [ "~." ]; # Apply DNS to all domains
     extraConfig = ''
       DNSStubListener=yes
     '';
@@ -101,7 +107,13 @@ in {
   security.polkit.enable = true;
   users.users.vlad = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "docker" "audio" "pipewire"]; # Enable sudo and network manager for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "docker"
+      "audio"
+      "pipewire"
+    ]; # Enable sudo and network manager for the user.
 
     packages = with pkgs; [
       #Full user app list
@@ -143,11 +155,9 @@ in {
       (discord-canary.override {
         withVencord = true;
       })
-      (
-        discord-ptb.override {
-          withVencord = true;
-        }
-      )
+      (discord-ptb.override {
+        withVencord = true;
+      })
       alejandra
       kind
       docker

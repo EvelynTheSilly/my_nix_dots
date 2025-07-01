@@ -200,7 +200,6 @@ in {
       ];
     };
     shellInit = ''
-      # Path to the OpenAI API key file
       OPENAI_KEY_FILE="$HOME/.config/env/openai.env"
 
       # Check if the file exists and is not empty

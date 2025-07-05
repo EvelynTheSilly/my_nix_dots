@@ -146,6 +146,7 @@ in
       cargo-generate
       trunk
       nil
+      hyfetch
       nixd
       nm-tray
       linuxKernel.packages.linux_6_6.perf

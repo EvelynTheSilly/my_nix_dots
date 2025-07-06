@@ -337,7 +337,7 @@
 
         // Suggested binds for running programs: terminal, app launcher, screen locker.
         Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty" "-e" "nu"; }
-        Mod+D hotkey-overlay-title="Run an Application: wofi"        { spawn "wofi --show drun"; }
+        Mod+D hotkey-overlay-title="Run an Application: wofi"        { spawn "wofi" "--show" "drun"; }
         Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
         // You can also use a shell. Do this if you need pipes, multiple commands, etc.

@@ -17,6 +17,7 @@
     extraPackages = [ pkgs.nixd ];
 
     userSettings = {
+      agent.enable = false;
       vim_mode = true;
       vim = {
         enable_vim_sneak = true;

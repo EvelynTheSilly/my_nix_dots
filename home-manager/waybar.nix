@@ -53,7 +53,7 @@
         }
 
         window#waybar {
-          background: linear-gradient(to right, #2b1e59, #3a1e66);
+          background: #3a1e66;
           border-bottom: 2px solid #4c1d95;
           padding: 0px 6px;
         }

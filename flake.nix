@@ -80,7 +80,6 @@
             ./device_specific/laptop/home.nix
             catppuccin.homeManagerModules.catppuccin
           ];
-        };
-      };
+        };      };
     };
 }

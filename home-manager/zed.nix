@@ -39,10 +39,6 @@
         enabled = true;
         coloring = "indent_aware";
       };
-      # centered_layout = {
-      #   left_padding = "0.15";
-      #   right_padding = "0.15";
-      # };
       inlay_hints = {
         enabled = true;
       };
@@ -59,16 +55,6 @@
       };
       chat_panel = {
         dock = "left";
-      };
-
-      assistant = {
-        enabled = true;
-        version = "2";
-
-        default_model = {
-          provider = "zed.dev";
-          model = "gpt-4o";
-        };
       };
 
       hour_format = "hour24";

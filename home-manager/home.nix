@@ -20,7 +20,7 @@
     ./fastfetch.nix
     ./themes.nix
     ./wlogout.nix
-    ./zed.nix
+    #./zed.nix
   ];
 
   nixpkgs = {

@@ -73,6 +73,7 @@
       /* Base styling for the bar */
         #waybar {
           background: @base; /* Dark background */
+          opacity: 0.5;
           color: #ffffff;      /* White text color */
           font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;
           font-size: 14px;

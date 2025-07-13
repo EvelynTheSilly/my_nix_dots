@@ -68,7 +68,7 @@
           modules = [
             #hyprland.homeManagerModules.default
             ./device_specific/desktop/home.nix
-            catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeModules.catppuccin
           ];
         };
         "vlad@laptop" = home-manager.lib.homeManagerConfiguration {
@@ -78,7 +78,7 @@
           modules = [
             #hyprland.homeManagerModules.default
             ./device_specific/laptop/home.nix
-            catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeModules.catppuccin
           ];
         };      };
     };

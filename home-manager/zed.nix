@@ -17,7 +17,9 @@
     extraPackages = [ pkgs.nixd ];
 
     userSettings = {
-      agent={enabled = false};
+      agent = {
+        enabled = false;
+      };
       vim_mode = true;
       vim = {
         enable_vim_sneak = true;

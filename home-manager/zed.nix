@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -13,7 +14,7 @@
       "Catppuccin"
       "rust"
     ];
-    extraPackages = [pkgs.nixd];
+    extraPackages = [ pkgs.nixd ];
 
     userSettings = {
       vim_mode = true;
@@ -63,7 +64,6 @@
       assistant = {
         enabled = true;
         version = "2";
-        default_open_ai_model = "4o";
 
         default_model = {
           provider = "zed.dev";
@@ -90,8 +90,8 @@
           };
         };
         env = {
-          EDITOR = "zed --wait";
-          TERM = "kitty"; # or kitty etc
+          EDITOR = "zeditor: --wait";
+          TERM = "kitty";
         };
         font_family = "Hack Nerd Font";
         font_features = null;

@@ -15,7 +15,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = ''
-        kitty  nu -e "fastfetch"
+        kitty nu -e "fastfetch"
       '';
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";
@@ -64,7 +64,7 @@
 
           "$mod SHIFT, F, fullscreen"
 
-          "$mod, Y, exec, sudo kitty --class btop --hold -e btop"
+          "$mod, Y, exec, kitty --class btop --hold -e btop"
 
           "$mod, B, exec, firefox"
 
@@ -73,8 +73,6 @@
           "$mod, S, exec, $screenshotter"
 
           "$mod, Q, killactive,"
-
-          "$mod, C, togglesplit"
 
           "$mod, V, exec, cliphist list | wofi -S dmenu -d | cliphist decode | wl-copy"
         ]
@@ -119,7 +117,8 @@
         "$mod ALT, mouse:272, resizewindow"
       ];
       exec-once = [
-        "wl-paste --watch cliphist store"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
         "$term"
         "hyprpaper"
         "hyprland-per-window-layout"

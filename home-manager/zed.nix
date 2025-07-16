@@ -2,8 +2,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -14,7 +13,7 @@
       "Catppuccin"
       "rust"
     ];
-    extraPackages = [ pkgs.nixd ];
+    extraPackages = [pkgs.nixd];
 
     userSettings = {
       agent = {

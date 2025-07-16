@@ -10,8 +10,20 @@
         layer = "top";
         position = "top";
         height = 50;
-        modules-left = ["custom/power" "hyprland/workspaces"];
-        modules-right = ["tray" "backlight" "cpu" "memory" "battery" "pulseaudio" "clock"];
+        modules-left = [
+          "custom/power"
+          "hyprland/workspaces"
+        ];
+        modules-centre = ["cava"];
+        modules-right = [
+          "tray"
+          "backlight"
+          "cpu"
+          "memory"
+          "battery"
+          "pulseaudio"
+          "clock"
+        ];
         cpu = {
           format = " {usage}%";
           on-click = "kitty --class btop --hold -e btop";

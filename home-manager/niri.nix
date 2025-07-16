@@ -2,8 +2,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.niri.config = ''
     // Input device configuration.
     input {

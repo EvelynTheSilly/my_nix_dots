@@ -2,6 +2,8 @@
 
 my nix dots
 feel free to use as inspiration/copy
+mainly for use by my friends for inspo
+~shoutout maddie~
 
 # dir structure
 

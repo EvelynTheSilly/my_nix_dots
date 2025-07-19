@@ -66,6 +66,14 @@
       pull.rebase = "true";
     };
   };
+  programs.cava = {
+    enable = true;
+    settings = {
+      color = {
+        foreground = "090040";
+      };
+    };
+  };
 
   programs.kitty = {
     enable = true;

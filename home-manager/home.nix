@@ -70,7 +70,9 @@
     enable = true;
     settings = {
       color = {
-        foreground = "#090040";
+        foreground = ''
+        '#090040'
+        '';
       };
     };
   };

@@ -2,8 +2,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -15,7 +14,7 @@
           "custom/power"
           "hyprland/workspaces"
         ];
-        modules-centre = [ "karlstav/cava" ];
+        modules-centre = ["karlstav/cava"];
         modules-right = [
           "tray"
           "backlight"

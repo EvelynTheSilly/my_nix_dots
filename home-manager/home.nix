@@ -71,7 +71,7 @@
     settings = {
       color = {
         foreground = ''
-        '#090040'
+          '#090040'
         '';
       };
     };

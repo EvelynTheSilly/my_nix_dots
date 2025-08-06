@@ -21,6 +21,7 @@
     ./themes.nix
     ./wlogout.nix
     ./zed.nix
+    ./niri.nix
   ];
 
   nixpkgs = {

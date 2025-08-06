@@ -335,7 +335,7 @@
         Mod+Shift+Slash { show-hotkey-overlay; }
 
         // Suggested binds for running programs: terminal, app launcher, screen locker.
-        Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty" "-e" "nu"; }
+        Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty"; }
         Mod+D hotkey-overlay-title="Run an Application: wofi"        { spawn "wofi" "--show" "drun"; }
         Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 

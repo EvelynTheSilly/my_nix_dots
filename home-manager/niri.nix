@@ -347,8 +347,6 @@
 
 
         Mod+Ctrl+H     { move-column-left; }
-        Mod+Ctrl+J     { move-column-down; }
-        Mod+Ctrl+K     { move-column-up; }
         Mod+Ctrl+L     { move-column-right; }
 
         Mod+Left   { move-workspace-to-monitor-left; }

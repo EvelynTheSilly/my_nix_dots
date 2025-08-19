@@ -24,6 +24,7 @@ in {
     ./certs.nix
     ./grub.nix
     ./niri.nix
+    ./packages.nix
   ];
   nix.settings.experimental-features = [
     "nix-command"

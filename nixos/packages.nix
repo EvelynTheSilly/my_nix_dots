@@ -11,6 +11,7 @@
 in {
   users.users.vlad.packages = with pkgs; [
     #Full user app list
+    godot
     tealdeer
     ledger-live-desktop
     carapace

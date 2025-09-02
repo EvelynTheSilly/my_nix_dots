@@ -123,7 +123,7 @@
         "hyprpaper"
         "hyprland-per-window-layout"
         "waybar"
-        "swaync"
+        "dunst"
         "nm-tray"
         "blueman-applet"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"

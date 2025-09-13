@@ -63,7 +63,7 @@ in {
   networking = {
     networkmanager.enable = true; # Easiest to use and most distros use this by default.
     networkmanager.dns = "none";
-    nameservers = ["1.1.1.1" "109.145.66.83"];
+    nameservers = ["109.145.66.83" "1.1.1.1"];
     dhcpcd.enable = false; # Optional: disable dhcpcd if you're using NetworkManager or systemd-networkd
     useDHCP = false;
   };

@@ -13,9 +13,8 @@
         modules-left = [
           "custom/power"
           "hyprland/workspaces"
-          "niri/workspaces"
         ];
-        modules-centre = ["karlstav/cava"];
+        modules-centre = [ "karlstav/cava" "niri/workspaces" ];
         modules-right = [
           "tray"
           "backlight"

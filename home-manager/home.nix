@@ -73,7 +73,7 @@
     };
   };
 
-  # Shell 
+  # Shell
   programs = {
     nushell = {
       enable = true;

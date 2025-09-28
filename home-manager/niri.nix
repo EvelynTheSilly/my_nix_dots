@@ -49,6 +49,7 @@
             // middle-emulation
         }
         warp-mouse-to-focus
+        focus-follows-mouse
     }
     // You can configure outputs by their name, which you can find
     // by running `niri msg outputs` while inside a niri instance.

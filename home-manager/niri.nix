@@ -189,7 +189,7 @@
             // Gradients can use a few different interpolation color spaces.
             // For example, this is a pastel rainbow gradient via in="oklch longer hue".
             //
-            active-gradient from="#ffd4f3" to="#fff4fa" angle=45 relative-to="workspace-view" in="oklch longer hue"
+            active-gradient from="#BCBCBC" to="#FF94CF" angle=45 relative-to="workspace-view" in="oklch longer hue"
 
             // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
         }

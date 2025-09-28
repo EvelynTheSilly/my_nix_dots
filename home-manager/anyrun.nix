@@ -4,7 +4,7 @@
   ...
 }: {
   programs.anyrun = {
-    enabled = true;
+    enable = true;
     config = {
       closeOnClick = true;
       x = {

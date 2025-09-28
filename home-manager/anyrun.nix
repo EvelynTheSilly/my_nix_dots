@@ -20,5 +20,20 @@
         "${pkgs.anyrun}/lib/librink.so"
       ];
     };
+    extraConfigFiles."websearch.ron".text = ''
+      Config(
+        prefix: "?",
+        // Options: Google, Ecosia, Bing, DuckDuckGo, Custom
+        //
+        // Custom engines can be defined as such:
+        // Custom(
+        //   name: "Searx",
+        //   url: "searx.be/?q={}",
+        // )
+        //
+        // NOTE: `{}` is replaced by the search query and `https://` is automatically added in front.
+        engines: [DuckDuckGo] 
+      )
+    '';
   };
 }

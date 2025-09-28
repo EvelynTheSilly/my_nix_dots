@@ -92,7 +92,6 @@
     // Find more information on the wiki:
     // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
     layout {
-        default-column-width { proportion 0.33333; }
         // Set gaps around windows in logical pixels.
         gaps 16
 
@@ -121,7 +120,7 @@
         // preset-window-heights { }
 
         // You can change the default width of the new windows.
-        default-column-width { proportion 0.5; }
+        default-column-width { proportion 0.33333; }
         // If you leave the brackets empty, the windows themselves will decide their initial width.
         // default-column-width {}
 

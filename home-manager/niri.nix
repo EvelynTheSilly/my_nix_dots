@@ -363,8 +363,8 @@
         Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
         Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
 
-        Mod+WheelScrollRight      { focus-column-right; }
-        Mod+WheelScrollLeft       { focus-column-left; }
+        Mod+Shift+WheelScrollDown { focus-column-right; }
+        Mod+Shift+WheelScrollUp   { focus-column-left; }
         Mod+Ctrl+WheelScrollRight { move-column-right; }
         Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 

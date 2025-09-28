@@ -360,11 +360,11 @@
         // To avoid scrolling through workspaces really fast, you can use
         // the cooldown-ms property. The bind will be rate-limited to this value.
         // You can set a cooldown on any bind, but it's most useful for the wheel.
-        Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-        Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+        Mod+Shift+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+        Mod+Shift+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
 
-        Mod+Shift+WheelScrollDown { focus-column-right; }
-        Mod+Shift+WheelScrollUp   { focus-column-left; }
+        Mod+WheelScrollDown { focus-column-right; }
+        Mod+WheelScrollUp   { focus-column-left; }
         Mod+Ctrl+WheelScrollRight { move-column-right; }
         Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 

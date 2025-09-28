@@ -10,6 +10,9 @@
       x = {
         fraction = 0.5;
       };
+      y = {
+        fraction = 0.5;
+      };
       plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
         "${pkgs.anyrun}/lib/libwebsearch.so"

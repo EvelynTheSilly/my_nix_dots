@@ -49,7 +49,7 @@
             // middle-emulation
         }
         warp-mouse-to-focus
-        focus-follows-mouse
+        focus-follows-mouse max-scroll-amount="10%"
     }
     // You can configure outputs by their name, which you can find
     // by running `niri msg outputs` while inside a niri instance.

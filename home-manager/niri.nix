@@ -327,7 +327,7 @@
         Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty"; }
         Mod+B hotkey-overlay-title="Open a Browser: firefox"         { spawn "firefox"; }
         Mod+D hotkey-overlay-title="Run an Application: wofi"        { spawn "wofi" "--show" "drun"; }
-        Mod+S hotkey-overlay-title="Screenshot: hyprshot"            { spawn "hyprshot" "-m" "region"; }
+        // Mod+S hotkey-overlay-title="Screenshot: hyprshot"            { spawn "hyprshot" "-m" "region"; }
 
         // Open/close the Overview: a zoomed-out view of workspaces and windows.
         // You can also move the mouse into the top-left hot corner,
@@ -417,9 +417,9 @@
         // Mod+Space       { switch-layout "next"; }
         // Mod+Shift+Space { switch-layout "prev"; }
 
-        Print { screenshot; }
-        Ctrl+Print { screenshot-screen; }
-        Alt+Print { screenshot-window; }
+        Mod+S { screenshot; }
+        Mod+Ctrl+S { screenshot-screen; }
+        Mod+Shift+S { screenshot-window; }
 
         // The quit action will show a confirmation dialog to avoid accidental exits.
         Mod+Shift+E { quit; }

@@ -92,6 +92,7 @@
     // Find more information on the wiki:
     // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
     layout {
+        default-column-width { proportion 0.33333; }
         // Set gaps around windows in logical pixels.
         gaps 16
 

@@ -13,6 +13,7 @@ in {
     #Full user app list
     godot
     tealdeer
+      xwayland-satelite
     ledger-live-desktop
     carapace
     gdk

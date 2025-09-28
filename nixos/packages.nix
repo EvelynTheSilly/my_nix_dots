@@ -13,7 +13,7 @@ in {
     #Full user app list
     godot
     tealdeer
-    nirius
+    #nirius
     xwayland-satellite
     ledger-live-desktop
     carapace

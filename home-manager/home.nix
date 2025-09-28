@@ -17,6 +17,7 @@
     ./wlogout.nix
     ./zed.nix
     ./niri.nix
+    ./anyrun.nix
   ];
 
   nixpkgs = {

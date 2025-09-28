@@ -326,7 +326,7 @@
 
         Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty"; }
         Mod+B hotkey-overlay-title="Open a Browser: firefox"         { spawn "firefox"; }
-        Mod+D hotkey-overlay-title="Run an Application: wofi"        { spawn "wofi" "--show" "drun"; }
+        Mod+S hotkey-overlay-title="Run an Application: wofi"        { spawn "wofi" "--show" "drun"; }
         Mod+D hotkey-overlay-title="Screenshot: hyprshot"            { spawn "hyprshot" "-m" "region"; }
 
         // Open/close the Overview: a zoomed-out view of workspaces and windows.

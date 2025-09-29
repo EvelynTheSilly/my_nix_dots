@@ -45,7 +45,6 @@ in {
     nil
     hyfetch
     nixd
-    nm-tray
     linuxKernel.packages.linux_6_6.perf
     hyprpaper
     obs-studio

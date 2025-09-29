@@ -179,7 +179,7 @@
             // If you enable the border, you probably want to disable the focus ring.
             // off
 
-            width 4
+            width 1
             active-color "#ffc87f"
             inactive-color "#505050"
 

@@ -325,7 +325,7 @@
         // shows a list of important hotkeys.
         Mod+Shift+Slash { show-hotkey-overlay; }
 
-        Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty"; }
+        Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty" "-e" "fastfetch"; }
         Mod+B hotkey-overlay-title="Open a Browser: firefox"         { spawn "firefox"; }
         Mod+D hotkey-overlay-title="Run an Application: anyrun"      { spawn "anyrun"; }
         Mod+Tab hotkey-overlay-title="App Switcher: anyrun"          { spawn "anyrun" "--plugins" "${pkgs.anyrun}/lib/libniri_focus.so"; }

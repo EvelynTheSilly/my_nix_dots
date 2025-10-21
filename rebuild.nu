@@ -1,25 +1,12 @@
 #! /usr/bin/env nix-shell
 #! nix-shell -i nu -p nushell git
 
-# Display help message
-def "show_help" [] {
-  echo $"Usage: $(basename (arg $nu.script)) [options]"
-  echo "rebuilds system based on modifications made to files in nixos and home-manager dir respectivly"
-  echo "not rebuilding nix/homemanager unless files are updated"
-  echo
-  echo "Options:"
-  echo "  -f       Force run both commands irrespective of changes"
-  echo "  -h, --help  Show this help message and exit"
-  exit 0
-}
-
 def "check_folder_in_git" [folder: string] {
   let length = git status ./$folder --porcelain | length
   return ($length > 0)
 }
 
 def "main" [
-  --help (-h)
   --force (-f)
   --home_manager
   --nixos

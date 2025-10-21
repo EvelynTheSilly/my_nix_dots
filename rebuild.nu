@@ -57,7 +57,7 @@ def "main" [
   }
   if $rebuild_home_manager {
     let homegen = home-manager generations | grep current
-    $commit_message = $commit_message ++ "Home Generation: " ++ $homegen
+    $commit_message = $commit_message ++ " Home Generation: " ++ $homegen
   }
   if (($commit_message | str length) > 0) {
     git commit -am $commit_message 

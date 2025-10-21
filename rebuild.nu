@@ -47,8 +47,14 @@ def "main" [
     home-manager switch --flake .
   }
 
-  if $rebuild_home_manager or $rebuild_nix {
-    let gen = nixos-rebuild list-generations --json |from json | where current == true 
-    git commit -am $"Nix generation: ($gen.generation | first) ($gen.date | first) kernel ($gen.kernelVersion | first)"
+  mut commit_message = ""
+  if $rebuild_nix {
+    let nixgen = nixos-rebuild list-generations --json |from json | where current == true
+    $commit_message = $"Nix generation: ($nixgen.generation | first) ($nixgen.date | first) kernel ($nixgen.kernelVersion | first)"
   }
+  if $rebuild_home_manager {
+    let homegen = home-manager generations | grep current
+    $commit_message = $commit_message ++ $homegen
+  }
+  git commit -am $commit_message
 }

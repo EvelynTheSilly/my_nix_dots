@@ -3,7 +3,7 @@
 
 def "check_folder_in_git" [folder: string] {
   echo $"checking ($folder)"
-  let length = git status ./$folder --porcelain | length
+  let length = git status ./$folder --porcelain | str length
   return ($length > 0)
 }
 
@@ -26,15 +26,15 @@ def "main" [
     $rebuild_home_manager = true
   }
 
-  if (check_folder_in_git "home-manager") {
+  if (git status ./home-manager --porcelain | str length) > 0 {
     echo "change to home-manager"
     $rebuild_home_manager = true
   }
-  if (check_folder_in_git "nixos") {
+  if (git status ./nixos --porcelain | str length) > 0 {
     echo "change to nixos"
     $rebuild_nix = true
   }
-  if (check_folder_in_git "device_specific") {
+  if (git status ./device_specific --porcelain | str length) > 0 {
     $rebuild_nix = true
     $rebuild_home_manager = true
   }

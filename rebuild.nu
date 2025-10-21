@@ -1,7 +1,6 @@
 #! /usr/bin/env nix-shell
 #! nix-shell -i nu -p nushell git
 
-git add * | save /dev/null -f
 # Display help message
 def "show_help" [] {
   echo $"Usage: $(basename (arg $nu.script)) [options]"
@@ -25,6 +24,7 @@ def "main" [
   --home_manager
   --nixos
 ] {
+  git add * | save /dev/null -f
   mut rebuild_nix = false
   mut rebuild_home_manager = false
   if $home_manager {
@@ -62,6 +62,6 @@ def "main" [
 
   if $rebuild_home_manager or $rebuild_nix {
     let gen = nixos-rebuild list-generations --json |from json | where current == true 
-    git commit -am $"Nix generation: ($gen.generation)"
+    git commit -am $"Nix generation: ($gen.generation | first) ($gen.date | first) kernel ($gen.kernelVersion | first)"
   }
 }

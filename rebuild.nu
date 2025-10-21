@@ -2,6 +2,7 @@
 #! nix-shell -i nu -p nushell git
 
 def "check_folder_in_git" [folder: string] {
+  echo $"checking ($folder)"
   let length = git status ./$folder --porcelain | length
   return ($length > 0)
 }
@@ -26,9 +27,11 @@ def "main" [
   }
 
   if (check_folder_in_git "home-manager") {
+    echo "change to home-manager"
     $rebuild_home_manager = true
   }
   if (check_folder_in_git "nixos") {
+    echo "change to nixos"
     $rebuild_nix = true
   }
   if (check_folder_in_git "device_specific") {
@@ -56,5 +59,6 @@ def "main" [
     let homegen = home-manager generations | grep current
     $commit_message = $commit_message ++ $homegen
   }
-  git commit -am $commit_message
+  #git commit -am $commit_message # commit messages arent working, ill fix em later
+  git commit -am "i cant fix the messages :("
 }

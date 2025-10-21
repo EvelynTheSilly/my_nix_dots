@@ -52,13 +52,14 @@ def "main" [
 
   mut commit_message = ""
   if $rebuild_nix {
-    let nixgen = nixos-rebuild list-generations --json |from json | where current == true
+    let nixgen = nixos-rebuild list-generations --json | from json | where current == true
     $commit_message = $"Nix generation: ($nixgen.generation | first) ($nixgen.date | first) kernel ($nixgen.kernelVersion | first)"
   }
   if $rebuild_home_manager {
     let homegen = home-manager generations | grep current
     $commit_message = $commit_message ++ $homegen
   }
-  #git commit -am $commit_message # commit messages arent working, ill fix em later
-  git commit -am "i cant fix the messages :("
+  if (($commit_message | str length) > 0) {
+    git commit -am $commit_message 
+  }
 }

@@ -6,7 +6,7 @@
   programs.waybar = {
     enable = true;
     settings = {
-       mainBar = {
+      mainBar = {
         layer = "top";
         position = "top";
         height = 50;
@@ -52,7 +52,7 @@
         backlight = {
           format = "{percent}  ";
         };
-      }; 
+      };
     };
   };
 }

@@ -112,7 +112,7 @@ in {
       "audio"
       "pipewire"
     ]; # Enable sudo and network manager for the user.
-   shell = pkgs.zsh;
+    shell = pkgs.zsh;
   };
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;

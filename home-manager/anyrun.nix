@@ -32,7 +32,7 @@
         // )
         //
         // NOTE: `{}` is replaced by the search query and `https://` is automatically added in front.
-        engines: [DuckDuckGo] 
+        engines: [DuckDuckGo]
       )
     '';
   };

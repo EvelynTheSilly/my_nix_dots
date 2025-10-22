@@ -55,7 +55,7 @@
       };
     };
     style = ''
-            /* Base styling for the bar */
+        /* Base styling for the bar */
         #waybar {
           color: #ffffff;      /* White text color */
           font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;

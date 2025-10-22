@@ -55,6 +55,7 @@
       };
     };
     style = ''
+      @define-color base #1e1e2e;
       /* Base styling for the bar */
       #waybar {
         font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;

@@ -5,7 +5,7 @@
   ...
 }: {
   catppuccin.flavor = "mocha";
-  catppuccin.enable = true;
+  #catppuccin.enable = true;
   catppuccin.cursors = {
     enable = true;
     flavor = "latte";

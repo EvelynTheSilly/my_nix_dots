@@ -74,7 +74,7 @@
         /* Styling for individual modules */
         #waybar .module {
           margin: 0 5px;
-          padding: 5px 5px;
+          padding: 3px 8px;
           border-radius: 5px;
           background: @surface0; /* Slightly lighter background for modules */
         }

@@ -10,7 +10,7 @@
   imports = [
     # You can also split up your configuration and import pieces of it here:
     ./hypr.nix
-    ./waybar.nix
+    ./waybar_rewrite.nix
     ./hyprutils.nix
     ./fastfetch.nix
     ./themes.nix

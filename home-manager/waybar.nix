@@ -59,7 +59,7 @@
         #waybar {
           font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;
           font-size: 14px;
-          padding: 5px 10px;
+          padding: 7px 10px;
           border-bottom: 2px solid @blue; /* Accent color */
         }
 

@@ -1,5 +1,3 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   lib,
@@ -44,10 +42,10 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userName = "Evelyn";
-    userEmail = "vlad@nikulin.name";
-    extraConfig = {
+    settings = {
       pull.rebase = "true";
+      user.name = "Evelyn";
+      user.email = "vlad@nikulin.name";
     };
   };
   programs.cava = {

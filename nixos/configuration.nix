@@ -112,35 +112,9 @@ in {
       "audio"
       "pipewire"
     ]; # Enable sudo and network manager for the user.
-    shell = pkgs.zsh;
   };
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [
-        "git" # Essential Oh My Zsh plugin
-      ];
-      # Custom plugins location (ensure they are installed via Nix)
-      customPkgs = [
-        pkgs.zsh-autosuggestions
-        pkgs.zsh-syntax-highlighting
-        pkgs.zsh-powerlevel10k
-      ];
-    };
-    shellInit = ''
-      OPENAI_KEY_FILE="$HOME/.config/env/openai.env"
-
-      # Check if the file exists and is not empty
-      if [ -f "$OPENAI_KEY_FILE" ] && [ -s "$OPENAI_KEY_FILE" ]; then
-        export OPENAI_API_KEY=$(cat "$OPENAI_KEY_FILE")
-      fi
-
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-    '';
-  };
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [

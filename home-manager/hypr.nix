@@ -48,11 +48,11 @@
 
           "$mod CONTROL_L, J, resizeactive, 0 -40"
 
-          "$mod ,E , hy3:makegroup, tab" #make tab group
+          "$mod ,E , makegroup, tab" #make tab group
 
-          "$mod SHIFT, E, hy3:makegroup, horizontal"
+          "$mod SHIFT, E, makegroup, horizontal"
 
-          "$mod SHIFT, E, hy3:makegroup, vertical"
+          "$mod SHIFT, E, makegroup, vertical"
 
           #move workspace to other monitor
           "$mod, left, movecurrentworkspacetomonitor, 0"
@@ -63,8 +63,6 @@
           "$mod, F, togglefloating"
 
           "$mod SHIFT, F, fullscreen"
-
-          "$mod, Y, exec, kitty --class btop --hold -e btop"
 
           "$mod, B, exec, firefox"
 

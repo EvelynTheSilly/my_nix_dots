@@ -25,6 +25,7 @@ in {
     ./grub.nix
     ./niri.nix
     ./packages.nix
+    ./noctalia.nix
   ];
   nix.settings.experimental-features = [
     "nix-command"

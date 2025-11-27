@@ -9,26 +9,16 @@ def "check_folder_in_git" [folder: string] {
 
 def "main" [
   --force (-f)
-  --home_manager
-  --nixos
 ] {
   git add * | save /dev/null -f
   mut rebuild_nix = false
-  mut rebuild_home_manager = false
-  if $home_manager {
-    $rebuild_home_manager = true
-  }
-  if $nixos {
-    $rebuild_nix = true
-  }
   if $force {
     $rebuild_nix = true
-    $rebuild_home_manager = true
   }
 
   if (git status ./home-manager --porcelain | str length) > 0 {
     echo "change to home-manager"
-    $rebuild_home_manager = true
+    $rebuild_nix = true
   }
   if (git status ./nixos --porcelain | str length) > 0 {
     echo "change to nixos"
@@ -36,30 +26,22 @@ def "main" [
   }
   if (git status ./device_specific --porcelain | str length) > 0 {
     $rebuild_nix = true
-    $rebuild_home_manager = true
   }
+  if (git status ./flake.nix --porcelain | str length) > 0 {
+      $rebuild_nix = true
+    }
 
   if $rebuild_nix {
     echo "rebuild_home_managering nix"
     echo "$(git status ./nixos --porcelain)"
     sudo nixos-rebuild switch --flake .
   }
-  if $rebuild_home_manager {
-    echo "rebuilding home manager"
-    echo "$(git status ./home-manager --porcelain)"
-    home-manager switch --flake .
-  }
-
   mut commit_message = ""
   if $rebuild_nix {
     let nixgen = nixos-rebuild list-generations --json | from json | where current == true
     $commit_message = $"Nix generation: ($nixgen.generation | first) ($nixgen.date | first) kernel ($nixgen.kernelVersion | first)"
   }
-  if $rebuild_home_manager {
-    let homegen = home-manager generations | grep current
-    $commit_message = $commit_message ++ " Home Generation: " ++ $homegen
-  }
   if (($commit_message | str length) > 0) {
-    git commit -am $commit_message 
+    git commit -am $commit_message
   }
 }

@@ -104,7 +104,7 @@ in {
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
   '';
   security.polkit.enable = true;
-  users.users.vlad = {
+  users.users.evelyn = {
     isNormalUser = true;
     extraGroups = [
       "wheel"

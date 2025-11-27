@@ -51,8 +51,17 @@
         modules = [
           ./device_specific/desktop/configuration.nix
           catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager
-          niri.nixosModules.niri
+          home-manager.nixosModules.home-manager {
+            #home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            #home-manager.users.home.stateVersion = "23.05";
+            home-manager.users.evelyn.imports = [
+              ./device_specific/desktop/home.nix
+              catppuccin.homeManagerModules.catppuccin
+              niri.homeModules.config
+            ];
+          }
+          #niri.nixosModules.niri
         ];
       };
       laptop = nixpkgs.lib.nixosSystem {
@@ -68,30 +77,5 @@
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      # FIXME replace with your username@hostname
-      "vlad@desktop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
-        modules = [
-          #hyprland.homeManagerModules.default
-          ./device_specific/desktop/home.nix
-          catppuccin.homeManagerModules.catppuccin
-          niri.homeModules.config
-        ];
-      };
-      "vlad@laptop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
-        modules = [
-          #hyprland.homeManagerModules.default
-          ./device_specific/laptop/home.nix
-          catppuccin.homeManagerModules.catppuccin
-          niri.homeModules.config
-        ];
-      };
-    };
   };
 }

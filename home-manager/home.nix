@@ -31,10 +31,10 @@
   };
 
   home = {
-    username = "vlad";
-    homeDirectory = "/home/vlad";
+#    isNormalUser = true;
+    username = "evelyn";
+    homeDirectory = lib.mkForce "/home/evelyn";
   };
-
   home.packages = with pkgs; [
     dunst
   ];
@@ -81,6 +81,7 @@
 
     starship = {
       enable = true;
+      enableNushellIntegration = true;
       settings = {
         add_newline = true;
         character = {

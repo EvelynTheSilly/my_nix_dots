@@ -9,7 +9,7 @@
     ]
   );
 in {
-  users.users.vlad.packages = with pkgs; [
+  users.users.evelyn.packages = with pkgs; [
     #Full user app list
     godot
     tealdeer

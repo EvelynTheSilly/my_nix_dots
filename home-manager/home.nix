@@ -62,7 +62,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = lib.mkForce "tokionight";
+      theme = lib.mkForce "tokyonight";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;

@@ -59,6 +59,20 @@
     };
   };
 
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = lib.mkForce "tokionight";
+      editor = {
+        line-number = "relative";
+        lsp.display-messages = true;
+        cursor-shape = {
+          insert = "bar";
+        };
+      };
+    };  
+  };
+
   # Term
   programs.kitty = {
     enable = true;

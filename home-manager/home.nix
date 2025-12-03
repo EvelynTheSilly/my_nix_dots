@@ -61,11 +61,11 @@
 
   programs.helix = {
     enable = true;
+    package = pkgs.evil-helix;
     settings = {
       theme = lib.mkForce "tokyonight";
       editor = {
         line-number = "relative";
-        lsp.display-messages = true;
         cursor-shape = {
           insert = "bar";
         };

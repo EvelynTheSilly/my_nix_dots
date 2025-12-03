@@ -26,7 +26,7 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
   };
 
@@ -51,7 +51,8 @@
         modules = [
           ./device_specific/desktop/configuration.nix
           catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             #home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             #home-manager.users.home.stateVersion = "23.05";

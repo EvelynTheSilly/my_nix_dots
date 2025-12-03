@@ -102,6 +102,16 @@
       };
       windowrulev2 = [
         "float,class:^(btop)$"
+
+        "tag +pip, title:(Picture.?in.?[Pp]icture)"
+        "float, tag:pip"
+        "pin, tag:pip"
+        "size 600 338, tag:pip"
+        "keepaspectratio, tag:pip"
+        "noborder, tag:pip"
+        "opacity 1 1, tag:pip"
+        "move 100%-w-40 4%, tag:pip"
+
       ];
 
       # mouse bindings

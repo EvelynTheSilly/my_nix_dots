@@ -31,7 +31,7 @@
   };
 
   home = {
-#    isNormalUser = true;
+    #    isNormalUser = true;
     username = "evelyn";
     homeDirectory = lib.mkForce "/home/evelyn";
   };
@@ -70,7 +70,7 @@
           insert = "bar";
         };
       };
-    };  
+    };
   };
 
   # Term

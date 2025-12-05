@@ -14,7 +14,7 @@
     ./themes.nix
     ./wlogout.nix
     ./zed.nix
-    ./niri.nix
+    #./niri.nix
     ./anyrun.nix
   ];
 

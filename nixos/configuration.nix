@@ -23,7 +23,7 @@ in {
   imports = [
     ./certs.nix
     ./grub.nix
-    ./niri.nix
+    #./niri.nix
     ./packages.nix
     ./noctalia.nix
   ];

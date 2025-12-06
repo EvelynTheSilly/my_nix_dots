@@ -111,7 +111,6 @@
         "noborder, tag:pip"
         "opacity 1 1, tag:pip"
         "move 100%-w-40 4%, tag:pip"
-
       ];
 
       # mouse bindings

@@ -16,6 +16,7 @@
     ./zed.nix
     #./niri.nix
     ./anyrun.nix
+    ./helix.nix
   ];
 
   nixpkgs = {
@@ -55,20 +56,6 @@
         foreground = ''
           '#090040'
         '';
-      };
-    };
-  };
-
-  programs.helix = {
-    enable = true;
-    package = pkgs.evil-helix;
-    settings = {
-      theme = lib.mkForce "tokyonight";
-      editor = {
-        line-number = "relative";
-        cursor-shape = {
-          insert = "bar";
-        };
       };
     };
   };

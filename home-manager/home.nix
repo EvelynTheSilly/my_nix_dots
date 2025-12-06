@@ -13,7 +13,7 @@
     ./fastfetch.nix
     ./themes.nix
     ./wlogout.nix
-    ./zed.nix
+    #./zed.nix
     #./niri.nix
     ./anyrun.nix
     ./helix.nix

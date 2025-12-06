@@ -32,13 +32,13 @@
           "$mod, J, movefocus, d"
 
           #window moving
-          "$mod SHIFT, H, movewindow, l"
+          "$mod SHIFT, H, hy3:movewindow, l"
 
-          "$mod SHIFT, L, movewindow, r"
+          "$mod SHIFT, L, hy3:movewindow, r"
 
-          "$mod SHIFT, K, movewindow, u"
+          "$mod SHIFT, K, hy3:movewindow, u"
 
-          "$mod SHIFT, J, movewindow, d"
+          "$mod SHIFT, J, hy3:movewindow, d"
 
           "$mod CONTROL_L, L, resizeactive, -40 0"
 

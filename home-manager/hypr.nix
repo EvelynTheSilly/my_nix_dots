@@ -48,7 +48,7 @@
 
           "$mod CONTROL_L, J, resizeactive, 0 -40"
 
-          #"$mod ,E , hy3:makegroup, tab" #make tab group
+          "$mod ,E , hy3:makegroup, tab" #make tab group
 
           #"$mod SHIFT, E, hy3:makegroup, horizontal"
 

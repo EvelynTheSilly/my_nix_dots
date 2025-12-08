@@ -77,8 +77,8 @@
     settings = {
     terminal.shell = {program = "nu";args = [];};
     };
-    #themePackage = pkgs.alacritty-theme;
-    #theme = "tokyonight";
+    themePackage = pkgs.alacritty-theme;
+    theme = "tokyo_night";
   };
 
   # Shell

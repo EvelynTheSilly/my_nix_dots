@@ -72,6 +72,14 @@
       notify_on_cmd_finish = "unfocused";
     };
   };
+  programs.alacritty = {
+    enable = true;
+    settings = {
+    terminal.shell = {program = "nu";args = [];};
+    };
+    #themePackage = pkgs.alacritty-theme;
+    #theme = "tokyonight";
+  };
 
   # Shell
   programs = {

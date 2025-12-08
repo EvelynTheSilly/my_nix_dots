@@ -12,6 +12,7 @@ in {
   users.users.evelyn.packages = with pkgs; [
     #Full user app list
     godot
+    alacritty
     tealdeer
     #nirius
     xwayland-satellite

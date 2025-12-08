@@ -15,7 +15,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = ''
-        alacritty nu -e "fastfetch"
+        alacritty -e nu -e "fastfetch"
       '';
       "$runner" = "wofi --show drun";
       "$screenshotter" = "hyprshot --mode region --clipboard-only";

@@ -23,13 +23,13 @@
       bind =
         [
           #focus moving
-          "$mod, H, movefocus, l"
+          "$mod, H, hy3:movefocus, l"
 
-          "$mod, L, movefocus, r"
+          "$mod, L, hy3:movefocus, r"
 
-          "$mod, K, movefocus, u"
+          "$mod, K, hy3:movefocus, u"
 
-          "$mod, J, movefocus, d"
+          "$mod, J, hy3:movefocus, d"
 
           #window moving
           "$mod SHIFT, H, hy3:movewindow, l"

@@ -21,11 +21,6 @@ in {
     # here, NOT in environment.systemPackages
   ];
   imports = [
-    ./certs.nix
-    ./grub.nix
-    #./niri.nix
-    ./packages.nix
-    ./noctalia.nix
   ];
   nix.settings.experimental-features = [
     "nix-command"

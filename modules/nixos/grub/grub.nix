@@ -16,7 +16,7 @@ in {
     efiSupport = true;
     efiInstallAsRemovable = true;
     device = "nodev";
-    theme = ./grub/catppuccin-mocha-grub-theme;
+    theme = ./catppuccin-mocha-grub-theme;
     useOSProber = true;
   };
   boot.loader.timeout = 1;

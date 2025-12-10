@@ -16,12 +16,8 @@ def "main" [
     $rebuild_nix = true
   }
 
-  if (git status ./home-manager --porcelain | str length) > 0 {
+  if (git status ./modules --porcelain | str length) > 0 {
     echo "change to home-manager"
-    $rebuild_nix = true
-  }
-  if (git status ./nixos --porcelain | str length) > 0 {
-    echo "change to nixos"
     $rebuild_nix = true
   }
   if (git status ./device_specific --porcelain | str length) > 0 {

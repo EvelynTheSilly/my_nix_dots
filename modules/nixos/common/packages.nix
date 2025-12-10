@@ -16,12 +16,10 @@ in {
     tealdeer
     #nirius
     xwayland-satellite
-    ledger-live-desktop
     carapace
     gdk
     python3
     lutris
-    google-cloud-sdk
     blueman
     bluez
     bluez-tools
@@ -39,15 +37,13 @@ in {
     libnotify
     cliphist
     wl-clipboard
-    cbonsai
     github-cli
     cargo-generate
     trunk
     nil
     hyfetch
     nixd
-    linuxKernel.packages.linux_6_6.perf
-    hyprpaper
+    perf
     obs-studio
     tree
     (discord-canary.override {
@@ -57,7 +53,6 @@ in {
       withVencord = true;
     })
     alejandra
-    kind
     docker
     keymapp
     neovim
@@ -84,10 +79,7 @@ in {
     ranger
     arandr
     btop
-    obsidian
-    wasm-bindgen-cli
     vscodium
-    kubectl
   ];
   environment.systemPackages = with pkgs; [
     wget
@@ -97,8 +89,6 @@ in {
     zsh-autosuggestions
     zsh-syntax-highlighting
     home-manager
-    wlogout
     catppuccin-cursors
-    autossh
   ];
 }

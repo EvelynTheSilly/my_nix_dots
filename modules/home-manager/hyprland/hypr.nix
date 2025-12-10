@@ -4,7 +4,6 @@
   inputs,
   ...
 }: {
-  programs.kitty.enable = true;
   # Variables for Hostnames
   wayland.windowManager.hyprland = {
     enable = true;

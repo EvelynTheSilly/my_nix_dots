@@ -6,17 +6,6 @@
   ...
 }: {
   imports = [
-    # You can also split up your configuration and import pieces of it here:
-    ./hypr.nix
-    ./waybar.nix
-    ./hyprutils.nix
-    ./fastfetch.nix
-    ./themes.nix
-    ./wlogout.nix
-    #./zed.nix
-    #./niri.nix
-    ./anyrun.nix
-    ./helix.nix
   ];
 
   nixpkgs = {

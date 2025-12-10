@@ -65,6 +65,7 @@
     enable = true;
     settings = {
     terminal.shell = {program = "nu";args = [];};
+    terminal.editor = "hx";
     };
     themePackage = pkgs.alacritty-theme;
     theme = "tokyo_night";

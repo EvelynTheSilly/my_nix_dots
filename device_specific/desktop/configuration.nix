@@ -4,8 +4,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   networking.hostName = "desktop";
   imports = [
     ../../modules/nixos/common/configuration.nix

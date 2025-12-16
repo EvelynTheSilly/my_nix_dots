@@ -15,10 +15,12 @@ in {
     enable = true;
     #devices = ["/dev/sda"];
     efiSupport = true;
-    efiInstallAsRemovable = true;
+    #efiInstallAsRemovable = true;
     device = "nodev";
     theme = ./catppuccin-mocha-grub-theme;
-    useOSProber = true;
+    #useOSProber = true;
   };
+
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 1;
 }

@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake";
     };
@@ -39,6 +44,7 @@
     niri,
     noctalia,
     quickshell,
+    darwin,
     #hy3,
     ...
   } @ inputs: let
@@ -78,7 +84,19 @@
       };
     };
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    darwinConfigurations."Evelyns-Macbook-Pro" = darwin.lib.darwinSystem {
+      modules = [
+        ./device_specific/macbook/configuration.nix
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.evelyn = ./device_specific/macbook/home.nix;
+
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
+      ];
+    };
   };
 }

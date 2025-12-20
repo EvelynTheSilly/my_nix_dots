@@ -85,6 +85,7 @@
     };
 
     darwinConfigurations."Evelyns-MacBook-Pro" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       modules = [
         ./device_specific/macbook/configuration.nix
         #home-manager.darwinModules.home-manager

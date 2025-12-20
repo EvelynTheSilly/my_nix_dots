@@ -3,5 +3,5 @@
   lib,
   ...
 }: {
-    system.stateVersion = 6;
+  system.stateVersion = 6;
 }

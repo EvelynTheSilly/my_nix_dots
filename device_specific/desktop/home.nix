@@ -16,6 +16,9 @@
     ../../modules/home-manager/WMutils/waybar/waybar.nix
     ../../modules/home-manager/WMutils/hyprutils/hyprutils.nix
     ../../modules/home-manager/WMutils/wlogout/wlogout.nix
+    ../../modules/home-manager/term/kitty.nix
+    ../../modules/home-manager/term/alacritty.nix
+    ../../modules/home-manager/shell/nu.nix
   ];
   wayland.windowManager.hyprland = {
     settings = {

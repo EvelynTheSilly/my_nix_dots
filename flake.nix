@@ -84,7 +84,7 @@
       };
     };
 
-    darwinConfigurations."Evelyns-Macbook-Pro" = darwin.lib.darwinSystem {
+    darwinConfigurations."Evelyns-Macbook-Pro".system = darwin.lib.darwinSystem {
       modules = [
         ./device_specific/macbook/configuration.nix
         #home-manager.darwinModules.home-manager

@@ -88,12 +88,12 @@
       system = "aarch64-darwin";
       modules = [
         ./device_specific/macbook/configuration.nix
-        #home-manager.darwinModules.home-manager
-        #{
-        #  home-manager.useGlobalPkgs = true;
-        #  home-manager.useUserPackages = true;
-        #  home-manager.users.evelyn = ./device_specific/macbook/home.nix;
-        #}
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.evelyn = ./device_specific/macbook/home.nix;
+        }
       ];
     };
   };

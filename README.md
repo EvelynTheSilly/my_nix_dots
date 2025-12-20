@@ -17,10 +17,8 @@ mainly for use by my friends for inspo
   
 # important files
 
-- rebuild.sh
-  rebuilds the system based on hostname,
-  only rebuilds home manager upon changes in the home manager folder and rebuilding nix upon changes to nixos folder
-  `./rebuild.nu -h` for more info
+- rebuild.nu
+  rebuilds the system
 - flake.nix
   includes the home managed and nixos configs for laptop and pc (they only include the device specific files)
   to add a new device change flake.nix to add another device with new hostname

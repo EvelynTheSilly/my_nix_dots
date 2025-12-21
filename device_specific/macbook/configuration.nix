@@ -4,23 +4,11 @@
   ...
 }: {
   imports = [
-    ./packages.nix
+    ../../modules/darwin/common/packages.nix
+    ../../modules/darwin/common/configuration.nix
+    ../../modules/darwin/aerospace/common.nix
   ];
 
-    
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  environment.extraInit = ''
-    if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-      . ~/.nix-profile/etc/profile.d/nix.sh
-    fi    
-  '';
-  security.pam.services.sudo_local.touchIdAuth = true;
-  
   users.users.evelyn.home = "/Users/evelyn";
   system.stateVersion = 6;
 }

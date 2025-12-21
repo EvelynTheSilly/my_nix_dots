@@ -12,7 +12,7 @@
       };
       env.EDITOR = "hx";
     };
-    themePackage = pkgs.alacritty-theme;
-    theme = "tokyo_night";
+    #themePackage = pkgs.alacritty-theme;
+    #theme = "tokyo_night";
   };
 }

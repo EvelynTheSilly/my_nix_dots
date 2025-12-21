@@ -3,6 +3,7 @@
   lib,
   ...
 }: {
+  programs.carapace.enable = true;
   programs = {
     nushell = {
       enable = true;

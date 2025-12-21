@@ -10,8 +10,8 @@
     ../../modules/home-manager/common/fastfetch.nix
     ../../modules/home-manager/shell/nu.nix
   ];
-  
+
   home.username = "evelyn";
-  home.homeDirectory =  "/Users/evelyn";
+  home.homeDirectory = "/Users/evelyn";
   home.stateVersion = "23.05";
 }

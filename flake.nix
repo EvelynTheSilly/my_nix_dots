@@ -92,7 +92,7 @@
         {
           #home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.evelyn.imports =[ ./device_specific/macbook/home.nix];
+          home-manager.users.evelyn.imports = [./device_specific/macbook/home.nix];
         }
       ];
     };

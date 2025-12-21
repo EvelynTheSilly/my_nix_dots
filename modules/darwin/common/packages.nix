@@ -3,11 +3,11 @@
   lib,
   ...
 }: {
-
-environment.systemPackages = with pkgs; [
-  alejandra
+  environment.systemPackages = with pkgs; [
+    alejandra
     firefox
     btop
     ranger
-    (discord-canary)
-  ];}
+    discord-canary
+  ];
+}

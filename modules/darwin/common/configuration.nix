@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -12,7 +12,7 @@ nixpkgs.config.allowUnfree = true;
   environment.extraInit = ''
     if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
       . ~/.nix-profile/etc/profile.d/nix.sh
-    fi    
+    fi
   '';
   security.pam.services.sudo_local.touchIdAuth = true;
-  }
+}

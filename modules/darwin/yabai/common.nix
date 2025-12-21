@@ -6,7 +6,7 @@
   services.yabai = {
     enable = true;
     config = {
-      mouse_modifier = "alt";
+      mouse_modifier = "fn";
       mouse_action1 = "move";
       mouse_action2 = "resize";
       focus_follows_mouse = "autoraise";

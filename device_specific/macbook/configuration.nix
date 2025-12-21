@@ -10,5 +10,6 @@
   ];
 
   users.users.evelyn.home = "/Users/evelyn";
+  system.primaryUser = "evelyn";
   system.stateVersion = 6;
 }

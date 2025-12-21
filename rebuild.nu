@@ -17,7 +17,7 @@ def "main" [
   }
 
   if (git status ./modules --porcelain | str length) > 0 {
-    echo "change to home-manager"
+    echo "change to a module"
     $rebuild_nix = true
   }
   if (git status ./device_specific --porcelain | str length) > 0 {
@@ -28,13 +28,15 @@ def "main" [
     }
 
   if $rebuild_nix {
-    echo "rebuild_home_managering nix"
-    echo "$(git status ./nixos --porcelain)"
-    sudo nixos-rebuild switch --flake .
+    if ((sys host | get name) == "Darwin") {
+      sudo darwin-rebuild switch --flake .      
+    } else {
+      sudo nixos-rebuild switch --flake .
+    }
   }
   mut commit_message = ""
   if $rebuild_nix {
-    let nixgen = nixos-rebuild list-generations --json | from json | where current == true
+    let nixgen = if ((sys host | get name) == "Darwin") {darwin-rebuild --list-generations | grep current} else {nixos-rebuild list-generations --json | from json | where current == true}
     $commit_message = $"Nix generation: ($nixgen.generation | first) ($nixgen.date | first) kernel ($nixgen.kernelVersion | first)"
   }
   if (($commit_message | str length) > 0) {

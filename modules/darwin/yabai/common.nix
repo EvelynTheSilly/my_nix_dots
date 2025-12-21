@@ -6,6 +6,7 @@
   services.yabai = {
     enable = true;
     config = {
+      layout = "bsp";
       mouse_modifier = "fn";
       mouse_action1 = "move";
       mouse_action2 = "resize";
@@ -20,7 +21,6 @@
       window_gap = 10;
     };
     extraConfig = ''
-      yabai -m config bsp
     '';
   };
 }

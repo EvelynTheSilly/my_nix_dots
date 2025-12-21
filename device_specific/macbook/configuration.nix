@@ -6,7 +6,7 @@
   imports = [
     ../../modules/darwin/common/packages.nix
     ../../modules/darwin/common/configuration.nix
-    ../../modules/darwin/aerospace/common.nix
+    ../../modules/darwin/yabai/common.nix
   ];
 
   users.users.evelyn.home = "/Users/evelyn";

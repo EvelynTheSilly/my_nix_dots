@@ -55,7 +55,10 @@
 
           #move workspace to other monitor
           "$mod, left, movecurrentworkspacetomonitor, 0"
+
           "$mod, right, movecurrentworkspacetomonitor, 1"
+
+          "$mod, up, movecurrentworkspacetomonitor, 2"
 
           "$mod, T, exec, $term"
 

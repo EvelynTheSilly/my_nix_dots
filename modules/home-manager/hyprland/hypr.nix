@@ -93,6 +93,7 @@
       env = [
         "HYPRCURSOR_THEME,catppuccin-latte-mauve-crusors"
         "HYPRCURSOR_SIZE,24"
+        "XCURSOR_SIZE,24"
       ];
       input = {
         kb_layout = [

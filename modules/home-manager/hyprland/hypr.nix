@@ -4,7 +4,9 @@
   inputs,
   ...
 }: let
-  spawn_firefox = builtins.toFile "spawn_script.sh" ''
+  spawn_firefox = pkgs.writeTextFile {
+    name = "spawn_script.sh";
+    text = ''
       #! /usr/bin/env nix-shell
       #! nix-shell -i sh -p jq
 
@@ -18,7 +20,11 @@
         hyprctl dispatch movetoworkspacesilent 3,address:$addr
       done
     '';
-  spawn_steam = builtins.toFile "spawn_script.sh" ''
+    executable = true;
+  };
+  spawn_steam = pkgs.writeTextFile {
+    name = "spawn_script.sh";
+    text = ''
       #! /usr/bin/env nix-shell
       #! nix-shell -i sh -p jq
 
@@ -32,7 +38,11 @@
         hyprctl dispatch movetoworkspacesilent 3,address:$addr
       done
     '';
-    spawn_discord = builtins.toFile "spawn_script.sh" ''
+    executable = true;
+  };
+  spawn_discord = pkgs.writeTextFile {
+    name = "spawn_script.sh";
+    text = ''
       #! /usr/bin/env nix-shell
       #! nix-shell -i sh -p jq
 
@@ -45,7 +55,10 @@
       while read addr; do
         hyprctl dispatch movetoworkspacesilent 3,address:$addr
       done
-    ''; in {
+    '';
+    executable = true;
+  };
+in {
   # Variables for Hostnames
   wayland.windowManager.hyprland = {
     enable = true;

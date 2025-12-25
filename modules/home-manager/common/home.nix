@@ -25,9 +25,6 @@
     username = "evelyn";
     homeDirectory = lib.mkForce "/home/evelyn";
   };
-  home.packages = with pkgs; [
-    dunst
-  ];
 
   programs.home-manager.enable = true;
   programs.git = {

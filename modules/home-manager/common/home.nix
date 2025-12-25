@@ -27,14 +27,7 @@
   };
 
   programs.home-manager.enable = true;
-  programs.git = {
-    enable = true;
-    settings = {
-      pull.rebase = "true";
-      user.name = "Evelyn";
-      user.email = "vlad@nikulin.name";
-    };
-  };
+  
   programs.cava = {
     enable = true;
     settings = {

@@ -10,6 +10,7 @@
     ../../modules/home-manager/common/fastfetch.nix
     ../../modules/home-manager/common/helix.nix
     ../../modules/home-manager/common/themes.nix
+    ../../modules/home-manager/common/git.nix
     ../../modules/home-manager/hyprland/hypr.nix
     #../../modules/home-manager/niri/niri.nix
     #../../modules/home-manager/WMutils/anyrun/anyrun.nix

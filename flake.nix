@@ -68,6 +68,7 @@
               ./device_specific/desktop/home.nix
               catppuccin.homeManagerModules.catppuccin
               niri.homeModules.config
+              noctalia.homeModules.default
             ];
           }
           #niri.nixosModules.niri

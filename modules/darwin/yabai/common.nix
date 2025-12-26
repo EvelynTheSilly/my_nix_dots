@@ -21,6 +21,7 @@
       window_gap = 10;
     };
     extraConfig = ''
+      yabai -m signal --add event=system_woke action="yabai -m config focus_follows_mouse autoraise"
     '';
   };
 }

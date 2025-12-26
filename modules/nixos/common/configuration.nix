@@ -84,10 +84,19 @@ in {
 
   # LY display manager, basically just the login screen
   services.displayManager.ly = {
-    enable = true;
+    enable = false;
     settings = {
       animation = "matrix";
       clear_password = true;
+    };
+  };
+  # lemurs, aq different dm im trying out 
+  services.displayManager.lemurs = {
+    enable = true;
+    settings = {
+      background = {
+        show_background = true;
+      };
     };
   };
 

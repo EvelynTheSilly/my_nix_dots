@@ -9,5 +9,7 @@
     btop
     ranger
     discord-canary
+    zed-editor
+    
   ];
 }

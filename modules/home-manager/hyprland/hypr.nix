@@ -3,62 +3,7 @@
   lib,
   inputs,
   ...
-}: let
-  spawn_firefox = pkgs.writeTextFile {
-    name = "spawn_script.sh";
-    text = ''
-      #! /usr/bin/env nix-shell
-      #! nix-shell -i sh -p jq
-
-      firefox &
-      sleep 1
-
-      pid=$(pgrep -n firefox)
-
-      hyprctl -j clients | jq -r ".[] | select(.pid == $pid) | .address" |
-      while read addr; do
-        hyprctl dispatch movetoworkspacesilent 3,address:$addr
-      done
-    '';
-    executable = true;
-  };
-  spawn_steam = pkgs.writeTextFile {
-    name = "spawn_script.sh";
-    text = ''
-      #! /usr/bin/env nix-shell
-      #! nix-shell -i sh -p jq
-
-      steam &
-      sleep 10
-
-      pid=$(pgrep -n steam)
-
-      hyprctl -j clients | jq -r ".[] | select(.pid == $pid) | .address" |
-      while read addr; do
-        hyprctl dispatch movetoworkspacesilent 3,address:$addr
-      done
-    '';
-    executable = true;
-  };
-  spawn_discord = pkgs.writeTextFile {
-    name = "spawn_script.sh";
-    text = ''
-      #! /usr/bin/env nix-shell
-      #! nix-shell -i sh -p jq
-
-      DiscordPTB &
-      sleep 10
-
-      pid=$(pgrep -n DiscordPTB)
-
-      hyprctl -j clients | jq -r ".[] | select(.pid == $pid) | .address" |
-      while read addr; do
-        hyprctl dispatch movetoworkspacesilent 3,address:$addr
-      done
-    '';
-    executable = true;
-  };
-in {
+}: {
   # Variables for Hostnames
   wayland.windowManager.hyprland = {
     enable = true;
@@ -171,13 +116,6 @@ in {
         "move 100%-w-40 4%, tag:pip"
       ];
 
-      workspace = [
-        "1,monitor:Dp-1"
-        "2,monitor:Dp-3"
-        "3,monitor:Dp-2"
-        "8,monitor:Dp-1"
-      ];
-
       # mouse bindings
       bindm = [
         # move window
@@ -191,9 +129,6 @@ in {
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "$term"
-        spawn_discord
-        spawn_firefox
-        spawn_steam
         #"hyprpaper"
         "hyprland-per-window-layout"
         #"waybar"

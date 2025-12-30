@@ -27,7 +27,7 @@
   };
 
   programs.home-manager.enable = true;
-  
+
   programs.cava = {
     enable = true;
     settings = {

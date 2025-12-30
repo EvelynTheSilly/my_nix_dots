@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-    programs.noctalia-shell = {
-      enable = true;
-    };
+  programs.noctalia-shell = {
+    enable = true;
+  };
 }

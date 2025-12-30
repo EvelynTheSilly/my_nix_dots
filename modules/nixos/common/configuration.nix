@@ -106,6 +106,8 @@ in {
   services.udev.extraRules = ''
     KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666"
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", TAG+="uaccess", TAG+="udev-acl"
+    # Keymapp / Wally Flashing rules for the Moonlander and Planck EZ
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
   '';
   security.polkit.enable = true;
   users.users.evelyn = {

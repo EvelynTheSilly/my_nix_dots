@@ -26,7 +26,9 @@ def "main" [
   if (git status ./flake.nix --porcelain | str length) > 0 {
       $rebuild_nix = true
   }
-
+  if (git status ./flake.lock --porcelain | str length) > 0 {
+      $rebuild_nix = true
+  }
   if $rebuild_nix {
     if ((sys host | get name) == "Darwin") {
       sudo darwin-rebuild switch --flake .      

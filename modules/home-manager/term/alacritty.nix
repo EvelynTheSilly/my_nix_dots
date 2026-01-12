@@ -11,6 +11,7 @@
         args = [];
       };
       env.EDITOR = "hx";
+      env.SHELL = "nu";
     };
     #themePackage = pkgs.alacritty-theme;
     #theme = "tokyo_night";

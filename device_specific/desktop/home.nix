@@ -4,7 +4,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../../modules/home-manager/common/home.nix
     ../../modules/home-manager/common/fastfetch.nix

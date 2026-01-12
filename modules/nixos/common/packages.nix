@@ -15,6 +15,7 @@ in {
     alacritty
     tealdeer
     #nirius
+    rare
     xwayland-satellite
     carapace
     gdk

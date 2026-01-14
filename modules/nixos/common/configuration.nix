@@ -49,7 +49,7 @@ in {
     open = false;
     nvidiaSettings = true;
     #Beta nvidia driver, use stable for latest stable
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   services.blueman.enable = true;

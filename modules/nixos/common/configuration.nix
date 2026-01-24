@@ -69,9 +69,6 @@ in {
     enable = false;
     fallbackDns = ["1.1.1.1"]; # Again, your homelab first
     domains = ["~."]; # Apply DNS to all domains
-    extraConfig = ''
-      DNSStubListener=yes
-    '';
   };
   # Set your time zone.
   time.timeZone = "Europe/London";

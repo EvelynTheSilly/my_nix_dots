@@ -20,7 +20,7 @@
       url = "github:sodiboo/niri-flake";
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland"; # ?submodules=1";
     hy3.url = "git+https://github.com/outfoxxed/hy3";
     hy3.inputs.hyprland.follows = "hyprland";
     catppuccin.url = "github:catppuccin/nix";
@@ -65,6 +65,7 @@
             ./device_specific/desktop/configuration.nix
             catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
+
             {
               #home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

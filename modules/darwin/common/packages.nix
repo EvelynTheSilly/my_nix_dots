@@ -10,6 +10,9 @@
     ranger
     discord-canary
     zed-editor
-    
+    starship
+    evil-helix
+    cargo
+    rustc    
   ];
 }

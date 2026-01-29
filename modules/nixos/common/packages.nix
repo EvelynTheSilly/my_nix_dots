@@ -11,6 +11,7 @@
 in {
   users.users.evelyn.packages = with pkgs; [
     #Full user app list
+    anki
     godot
     alacritty
     tealdeer

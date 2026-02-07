@@ -327,8 +327,8 @@
 
         Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty" "-e" "fastfetch"; }
         Mod+B hotkey-overlay-title="Open a Browser: firefox"         { spawn "firefox"; }
-        Mod+D hotkey-overlay-title="Run an Application: anyrun"      { spawn "anyrun"; }
-        Mod+Tab hotkey-overlay-title="App Switcher: anyrun"          { spawn "anyrun" "--plugins" "${pkgs.anyrun}/lib/libniri_focus.so"; }
+        Mod+D hotkey-overlay-title="Run an Application: anyrun"      { spawn "wofi --show drun"; }
+        // Mod+Tab hotkey-overlay-title="App Switcher: anyrun"          { spawn "anyrun" "--plugins" "${pkgs.anyrun}/lib/libniri_focus.so"; }
         // Mod+S hotkey-overlay-title="Screenshot: hyprshot"         { spawn "hyprshot" "-m" "region"; }
 
         // Open/close the Overview: a zoomed-out view of workspaces and windows.

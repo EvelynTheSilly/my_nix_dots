@@ -250,7 +250,7 @@
     // See the binds section below for more spawn examples.
 
     // This line starts waybar, a commonly used bar for Wayland compositors.
-    spawn-at-startup "waybar"
+    spawn-at-startup "noctalia-shell"
 
     // Uncomment this line to ask the clients to omit their client-side decorations if possible.
     // If the client will specifically ask for CSD, the request will be honored.
@@ -325,11 +325,11 @@
         // shows a list of important hotkeys.
         Mod+Shift+Slash { show-hotkey-overlay; }
 
-        Mod+T hotkey-overlay-title="Open a Terminal: kitty"          { spawn "kitty" "-e" "fastfetch"; }
+        Mod+T hotkey-overlay-title="Open a Terminal: alacritty"      { spawn "alacritty" "-e" "nu" "-e" "fastfetch"; }
         Mod+B hotkey-overlay-title="Open a Browser: firefox"         { spawn "firefox"; }
-        Mod+D hotkey-overlay-title="Run an Application: anyrun"      { spawn "wofi --show drun"; }
-        // Mod+Tab hotkey-overlay-title="App Switcher: anyrun"          { spawn "anyrun" "--plugins" "${pkgs.anyrun}/lib/libniri_focus.so"; }
-        // Mod+S hotkey-overlay-title="Screenshot: hyprshot"         { spawn "hyprshot" "-m" "region"; }
+        Mod+D hotkey-overlay-title="Run an Application: anyrun"      { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+        // Mod+Tab hotkey-overlay-title="App Switcher: anyrun"       { spawn "anyrun" "--plugins" "${pkgs.anyrun}/lib/libniri_focus.so"; }
+        Mod+S hotkey-overlay-title="Screenshot: hyprshot"            { spawn "hyprshot" "-m" "region"; }
 
         // Open/close the Overview: a zoomed-out view of workspaces and windows.
         // You can also move the mouse into the top-left hot corner,

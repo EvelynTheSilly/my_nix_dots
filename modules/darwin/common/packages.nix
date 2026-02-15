@@ -14,5 +14,6 @@
     evil-helix
     cargo
     rustup
+    tealdeer
   ];
 }

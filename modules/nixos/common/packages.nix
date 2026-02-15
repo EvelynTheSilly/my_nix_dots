@@ -27,6 +27,7 @@ in {
     bluez-tools
     bc
     rustlings
+    bacon
     r2modman
     bottles
     transmission_4-qt

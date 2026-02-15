@@ -15,5 +15,6 @@
     cargo
     rustup
     tealdeer
+    bacon
   ];
 }

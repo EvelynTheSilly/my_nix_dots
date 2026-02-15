@@ -13,7 +13,6 @@
     starship
     evil-helix
     cargo
-    rustc    
-    rust-analyzer
+    rustup
   ];
 }

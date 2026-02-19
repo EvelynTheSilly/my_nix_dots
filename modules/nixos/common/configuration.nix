@@ -89,13 +89,14 @@ in {
   };
   # lemurs, aq different dm im trying out
   services.displayManager.lemurs = {
-    enable = true;
+    enable = false;
     settings = {
       background = {
         show_background = true;
       };
     };
   };
+  services.displayManager.sddm.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.hack

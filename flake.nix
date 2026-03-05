@@ -37,78 +37,75 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      hyprland,
-      catppuccin,
-      niri,
-      noctalia,
-      quickshell,
-      darwin,
-      hy3,
-      ...
-    }@inputs:
-    let
-      inherit (self) outputs;
-    in
-    {
-      # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          # > Our main nixos configuration file <
-          modules = [
-            ./device_specific/desktop/configuration.nix
-            catppuccin.nixosModules.catppuccin
-            home-manager.nixosModules.home-manager
-
-            {
-              #home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              #home-manager.users.home.stateVersion = "23.05";
-              home-manager.users.evelyn.imports = [
-                ./device_specific/desktop/home.nix
-                hyprland.homeManagerModules.default
-                catppuccin.homeManagerModules.catppuccin
-                niri.homeModules.config
-                noctalia.homeModules.default
-                {
-                  wayland.windowManager.hyprland = {
-                    enable = true;
-                    #plugins = [ hy3.packages.x86_64-linux.hy3 ];
-                  };
-                }
-              ];
-            }
-            #niri.nixosModules.niri
-          ];
-        };
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./device_specific/laptop/configuration.nix
-            catppuccin.nixosModules.catppuccin
-            home-manager.nixosModules.home-manager
-            niri.nixosModules.niri
-          ];
-        };
-      };
-
-      darwinConfigurations."Evelyns-MacBook-Pro" = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    hyprland,
+    catppuccin,
+    niri,
+    noctalia,
+    quickshell,
+    darwin,
+    hy3,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
+    # NixOS configuration entrypoint
+    # Available through 'nixos-rebuild --flake .#your-hostname'
+    nixosConfigurations = {
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
         modules = [
-          ./device_specific/macbook/configuration.nix
-          home-manager.darwinModules.home-manager
+          ./device_specific/desktop/configuration.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+
           {
             #home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.evelyn.imports = [ ./device_specific/macbook/home.nix ];
+            #home-manager.users.home.stateVersion = "23.05";
+            home-manager.users.evelyn.imports = [
+              ./device_specific/desktop/home.nix
+              hyprland.homeManagerModules.default
+              catppuccin.homeManagerModules.catppuccin
+              niri.homeModules.config
+              noctalia.homeModules.default
+              {
+                wayland.windowManager.hyprland = {
+                  enable = true;
+                  #plugins = [ hy3.packages.x86_64-linux.hy3 ];
+                };
+              }
+            ];
           }
+          #niri.nixosModules.niri
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./device_specific/laptop/configuration.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager
+          niri.nixosModules.niri
         ];
       };
     };
+
+    darwinConfigurations."Evelyns-MacBook-Pro" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        ./device_specific/macbook/configuration.nix
+        home-manager.darwinModules.home-manager
+        {
+          #home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.evelyn.imports = [./device_specific/macbook/home.nix];
+        }
+      ];
+    };
+  };
 }

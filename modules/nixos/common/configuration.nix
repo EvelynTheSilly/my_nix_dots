@@ -18,6 +18,22 @@ in {
   programs.nix-ld.libraries = with pkgs; [
     icu.dev
     icu
+    fontconfig
+    freetype
+    libpng
+    libjpeg
+    libwebp
+    libglvnd # For OpenGL/GLX support if needed
+    xorg.libX11
+    xorg.libXext
+    xorg.libXrender
+    xorg.libXt
+    xorg.libXdmcp
+    xorg.libXau
+    # Add skia's other common deps
+    expat
+    zlib
+    libxml2
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];

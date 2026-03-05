@@ -24,6 +24,7 @@ in {
     libjpeg
     libwebp
     libglvnd # For OpenGL/GLX support if needed
+    xorg.libICE
     xorg.libX11
     xorg.libXext
     xorg.libXrender

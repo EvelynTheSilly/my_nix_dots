@@ -32,13 +32,13 @@
           "$mod, J, hy3:movefocus, d"
 
           #window moving
-          "$mod SHIFT, H, hy3:movewindow, l"
+          "$mod SHIFT, H, movewindow, l"
 
-          "$mod SHIFT, L, hy3:movewindow, r"
+          "$mod SHIFT, L, movewindow, r"
 
-          "$mod SHIFT, K, hy3:movewindow, u"
+          "$mod SHIFT, K, movewindow, u"
 
-          "$mod SHIFT, J, hy3:movewindow, d"
+          "$mod SHIFT, J, movewindow, d"
 
           "$mod CONTROL_L, L, resizeactive, -40 0"
 
@@ -48,7 +48,7 @@
 
           "$mod CONTROL_L, J, resizeactive, 0 -40"
 
-          "$mod ,E , hy3:makegroup, tab" # make tab group
+          #"$mod ,E , hy3:makegroup, tab" # make tab group
 
           #"$mod SHIFT, E, hy3:makegroup, horizontal"
 

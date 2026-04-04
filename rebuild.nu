@@ -38,8 +38,8 @@ def "main" [
   }
   mut commit_message = ""
   if $rebuild_nix {
-    $commit_message = if ((sys host | get name) == "Darwin") {
-      sudo darwin-rebuild --list-generations | grep current
+    if ((sys host | get name) == "Darwin") {
+      $commit_message = (sudo darwin-rebuild --list-generations | grep current)
     } else {
       let nixgen = nixos-rebuild list-generations --json | from json | where current == true
       $commit_message = $"Nix generation: ($nixgen.generation | first) ($nixgen.date | first) kernel ($nixgen.kernelVersion | first)"

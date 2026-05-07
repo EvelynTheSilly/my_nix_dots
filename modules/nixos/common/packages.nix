@@ -11,6 +11,13 @@
 in {
   users.users.evelyn.packages = with pkgs; [
     #Full user app list
+    openjdk21
+    openjdk21_headless
+    jetbrains.idea-oss
+    opencode
+    unzip
+    zip
+    cloc
     anki
     godot
     alacritty

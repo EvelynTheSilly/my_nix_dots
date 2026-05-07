@@ -14,6 +14,16 @@
     ]
   );
 in {
+  nixpkgs.overlays = [
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: {
+        doCheck = false;
+      });
+    })
+  ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
   programs.nix-ld.enable = true; # dynamic executable fix
   programs.nix-ld.libraries = with pkgs; [
     icu.dev

@@ -15,6 +15,9 @@ carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
 alias nvim = nix run github:vnikjr/nvf -- 
 alias f = hyfetch 
+alias cloc = cloc --vcs git
+alias "nix develop" = nix develop --command nu
+alias "nix d" = nix develop
 
 #~/.config/nushell/config.nu
 source $"($nu.cache-dir)/carapace.nu"

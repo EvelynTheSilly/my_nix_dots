@@ -4,6 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    telegram-desktop
     alejandra
     firefox
     btop

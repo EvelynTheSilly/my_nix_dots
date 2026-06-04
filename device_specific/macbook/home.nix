@@ -15,4 +15,5 @@
   home.username = "evelyn";
   home.homeDirectory = "/Users/evelyn";
   home.stateVersion = "23.05";
+  home.file."bin/yabai".source = "${pkgs.yabai}/bin/yabai";
 }

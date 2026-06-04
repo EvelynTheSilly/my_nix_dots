@@ -4,7 +4,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    jetbrains.idea-oss
     telegram-desktop
     alejandra
     firefox

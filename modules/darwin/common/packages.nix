@@ -3,6 +3,11 @@
   lib,
   ...
 }: {
+  homebrew = {
+    enable = true;
+    brews = [ "koekeishiya/formulae/yabai" ];
+  };
+
   environment.systemPackages = with pkgs; [
     telegram-desktop
     alejandra

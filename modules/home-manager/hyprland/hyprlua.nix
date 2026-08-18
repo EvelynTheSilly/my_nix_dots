@@ -66,10 +66,10 @@
     hl.bind(mod .. "+CTRL+K", hl.dsp.window.resize({ x = 0, y = 40 }))
     hl.bind(mod .. "+CTRL+J", hl.dsp.window.resize({ x = 0, y = -40 }))
 
-    -- Move workspace to monitor (update monitor names to match your setup)
-    -- hl.bind(mod .. "+left", hl.dsp.workspace.move({ monitor = "DP-1" }))
-    -- hl.bind(mod .. "+right", hl.dsp.workspace.move({ monitor = "HDMI-A-1" }))
-    -- hl.bind(mod .. "+up", hl.dsp.workspace.move({ monitor = "eDP-1" }))
+    -- Move workspace to monitor
+    hl.bind(mod .. "+left", hl.dsp.workspace.move({ monitor = "DP-1" }))
+    hl.bind(mod .. "+right", hl.dsp.workspace.move({ monitor = "DP-2" }))
+    hl.bind(mod .. "+up", hl.dsp.workspace.move({ monitor = "DP-3" }))
 
     -- App launchers
     hl.bind(mod .. "+T", hl.dsp.exec_cmd(term))

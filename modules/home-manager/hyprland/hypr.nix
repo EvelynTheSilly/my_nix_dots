@@ -14,75 +14,75 @@
     ];
     xwayland.enable = true;
     settings = {
-      "$mod" = {
+      "mod" = {
         _var = "SUPER";
       };
-      "$term" = {
+      "term" = {
         _var = "alacritty -e nu -e \"hyfetch\"";
       };
-      "$runner" = {
+      "runner" = {
         _var = "wofi --show drun";
       };
-      "$screenshotter" = {
+      "screenshotter" = {
         _var = "hyprshot --mode region --clipboard-only";
       };
 
       bind =
         [
           #focus moving
-          "$mod, H, movefocus, l"
+          "mod, H, movefocus, l"
 
-          "$mod, L, movefocus, r"
+          "mod, L, movefocus, r"
 
-          "$mod, K, movefocus, u"
+          "mod, K, movefocus, u"
 
-          "$mod, J, movefocus, d"
+          "mod, J, movefocus, d"
 
           #window moving
-          "$mod SHIFT, H, movewindow, l"
+          "mod SHIFT, H, movewindow, l"
 
-          "$mod SHIFT, L, movewindow, r"
+          "mod SHIFT, L, movewindow, r"
 
-          "$mod SHIFT, K, movewindow, u"
+          "mod SHIFT, K, movewindow, u"
 
-          "$mod SHIFT, J, movewindow, d"
+          "mod SHIFT, J, movewindow, d"
 
-          "$mod CONTROL_L, L, resizeactive, -40 0"
+          "mod CONTROL_L, L, resizeactive, -40 0"
 
-          "$mod CONTROL_L, H, resizeactive, 40 0"
+          "mod CONTROL_L, H, resizeactive, 40 0"
 
-          "$mod CONTROL_L, K, resizeactive, 0 40"
+          "mod CONTROL_L, K, resizeactive, 0 40"
 
-          "$mod CONTROL_L, J, resizeactive, 0 -40"
+          "mod CONTROL_L, J, resizeactive, 0 -40"
 
           #"$mod ,E , hy3:makegroup, tab" # make tab group
+          
+          #"mod SHIFT, E, hy3:makegroup, horizontal"
 
-          #"$mod SHIFT, E, hy3:makegroup, horizontal"
-
-          #"$mod SHIFT, E, hy3:makegroup, vertical"
+          #"mod SHIFT, E, hy3:makegroup, vertical"
 
           #move workspace to other monitor
-          "$mod, left, movecurrentworkspacetomonitor, 0"
+          "mod, left, movecurrentworkspacetomonitor, 0"
 
-          "$mod, right, movecurrentworkspacetomonitor, 1"
+          "mod, right, movecurrentworkspacetomonitor, 1"
 
-          "$mod, up, movecurrentworkspacetomonitor, 2"
+          "mod, up, movecurrentworkspacetomonitor, 2"
 
-          "$mod, T, exec, $term"
+          "mod, T, exec, term"
 
-          "$mod, F, togglefloating"
+          "mod, F, togglefloating"
 
-          "$mod SHIFT, F, fullscreen"
+          "mod SHIFT, F, fullscreen"
 
-          "$mod, B, exec, firefox"
+          "mod, B, exec, firefox"
 
-          "$mod, D, exec, $runner"
+          "mod, D, exec, runner"
 
-          "$mod, S, exec, $screenshotter"
+          "mod, S, exec, screenshotter"
 
-          "$mod, Q, killactive,"
+          "mod, Q, killactive,"
 
-          "$mod, V, exec, cliphist list | wofi -S dmenu -d | cliphist decode | wl-copy"
+          "mod, V, exec, cliphist list | wofi -S dmenu -d | cliphist decode | wl-copy"
         ]
         ++ (
           # workspaces
@@ -93,8 +93,8 @@
               i: let
                 ws = i + 1;
               in [
-                "$mod, code:1${toString i}, workspace, ${toString ws}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspacesilent, ${toString ws}"
+                "mod, code:1${toString i}, workspace, ${toString ws}"
+                "mod SHIFT, code:1${toString i}, movetoworkspacesilent, ${toString ws}"
               ]
             )
             9
@@ -128,16 +128,16 @@
       # mouse bindings
       bindm = [
         # move window
-        "$mod, mouse:272, movewindow"
+        "mod, mouse:272, movewindow"
         # resize
-        "$mod, mouse:273, resizewindow"
+        "mod, mouse:273, resizewindow"
         # alt left click to also resize
-        "$mod ALT, mouse:272, resizewindow"
+        "mod ALT, mouse:272, resizewindow"
       ];
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "$term"
+        "term"
         #"hyprpaper"
         "hyprland-per-window-layout"
         #"waybar"

@@ -8,17 +8,24 @@
   # Variables for Hostnames
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "lua";
     plugins = [
       #hy3.packages.x86_64-linux.hy3
     ];
     xwayland.enable = true;
     settings = {
-      "$mod" = "SUPER";
-      "$term" = ''
-        alacritty -e nu -e "hyfetch"
-      '';
-      "$runner" = "wofi --show drun";
-      "$screenshotter" = "hyprshot --mode region --clipboard-only";
+      "$mod" = {
+        _var = "SUPER";
+      };
+      "$term" = {
+        _var = "alacritty -e nu -e \"hyfetch\"";
+      };
+      "$runner" = {
+        _var = "wofi --show drun";
+      };
+      "$screenshotter" = {
+        _var = "hyprshot --mode region --clipboard-only";
+      };
 
       bind =
         [

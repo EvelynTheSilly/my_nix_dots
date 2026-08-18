@@ -13,7 +13,6 @@ in {
     #Full user app list
     openjdk21
     openjdk21_headless
-    jetbrains.idea-oss
     opencode
     unzip
     zip

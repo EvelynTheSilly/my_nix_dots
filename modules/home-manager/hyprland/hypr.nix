@@ -134,7 +134,7 @@
         # alt left click to also resize
         "mod ALT, mouse:272, resizewindow"
       ];
-      exec-once = [
+      exec_cmd = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "term"

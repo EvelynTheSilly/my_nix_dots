@@ -101,7 +101,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "lua";
-    xwayland.enable = true;
+    xwayland.enable = false;
     extraConfig = builtins.readFile hyprlandLua;
   };
 }

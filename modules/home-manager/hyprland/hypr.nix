@@ -14,7 +14,7 @@
     ];
     xwayland.enable = true;
     settings = {
-      "mod" = {
+      "$mod" = {
         _var = "SUPER";
       };
       "term" = {

@@ -22,15 +22,7 @@
     ../../modules/home-manager/term/alacritty.nix
     ../../modules/home-manager/shell/nu.nix
   ];
-  wayland.windowManager.hyprland = {
-    settings = {
-      monitor = [
-        "DP-1, 3440x1440@165, 0x0, 1"
-        "DP-3, 3840x2160@60, 3440x-1200, 1, transform, 1"
-        "DP-2, 1920x1080@100, 5600x0, 1"
-      ];
-    };
-  };
+
   services.hyprpaper = {
     settings = {
       preload = [

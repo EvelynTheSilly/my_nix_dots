@@ -19,6 +19,11 @@
     hl.env("HYPRCURSOR_SIZE", "24")
     hl.env("XCURSOR_SIZE", "24")
 
+    -- Monitors
+    hl.monitor({ output = "DP-1", mode = "3440x1440@165", position = "0x0", scale = 1 })
+    hl.monitor({ output = "DP-3", mode = "3840x2160@60", position = "3440x-1200", scale = 1, transform = 1 })
+    hl.monitor({ output = "DP-2", mode = "1920x1080@100", position = "5600x0", scale = 1 })
+
     -- General
     hl.config({
       general = {
@@ -101,7 +106,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "lua";
-    xwayland.enable = false;
+    xwayland.enable = true;
     extraConfig = builtins.readFile hyprlandLua;
   };
 }

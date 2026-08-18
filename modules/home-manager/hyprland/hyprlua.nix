@@ -23,7 +23,7 @@
     hl.config({
       general = {
         layout = "hy3",
-        "col.active_border" = "rgb(111,48,158)",
+        ["col.active_border"] = "rgb(111,48,158)",
         border_size = 2,
       },
       decoration = {
@@ -78,8 +78,8 @@
 
     -- Workspace binds (1-9)
     for i = 1, 9 do
-      hl.bind(mod .. "+code:1" .. i - 1, hl.dsp.focus({ workspace = tostring(i) }))
-      hl.bind(mod .. "+SHIFT+code:1" .. i - 1, hl.dsp.window.move({ workspace = tostring(i), follow = false }))
+      hl.bind(mod .. "+code:1" .. tostring(i - 1), hl.dsp.focus({ workspace = tostring(i) }))
+      hl.bind(mod .. "+SHIFT+code:1" .. tostring(i - 1), hl.dsp.window.move({ workspace = tostring(i), follow = false }))
     end
 
     -- Mouse binds

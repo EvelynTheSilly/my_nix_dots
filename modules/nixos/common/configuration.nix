@@ -190,6 +190,14 @@ in {
   virtualisation.docker.enable = true;
   services.openssh.enable = true;
 
+  # Remote deploy target for the homelab flake (homelab repo)
+  programs.ssh.extraConfig = ''
+    Host homelab
+      HostName ssh.eve.software
+      Port 2222
+      User evelyn
+  '';
+
   # DO NOT EDIT
   system.stateVersion = "24.11"; # Did you read the comment?
 }

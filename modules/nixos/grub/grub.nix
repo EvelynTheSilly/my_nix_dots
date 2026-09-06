@@ -18,7 +18,7 @@ in {
     #efiInstallAsRemovable = true;
     device = "nodev";
     theme = ./catppuccin-mocha-grub-theme;
-    #useOSProber = true;
+    useOSProber = true;
   };
 
   boot.loader.efi.canTouchEfiVariables = true;

@@ -10,7 +10,7 @@
   );
 in {
   users.users.evelyn.packages = with pkgs; [
-    #Full user app list
+    kdePackages.kdeconnect-kde
     openjdk21
     openjdk21_headless
     opencode

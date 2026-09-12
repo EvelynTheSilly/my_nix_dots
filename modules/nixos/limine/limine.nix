@@ -10,7 +10,7 @@
     secureBoot = {
       enable = true;
       autoGenerateKeys = true;
-      autoEnrollKeys = true;
+      autoEnrollKeys.enable = true;
     };
   };
   environment.systemPackages = with pkgs; [

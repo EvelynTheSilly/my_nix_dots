@@ -11,6 +11,7 @@
 in {
   users.users.evelyn.packages = with pkgs; [
     kdePackages.kdeconnect-kde
+    jetbrains.idea
     openjdk21
     openjdk21_headless
     opencode

@@ -9,6 +9,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    tor-browser
     telegram-desktop
     alejandra
     firefox
